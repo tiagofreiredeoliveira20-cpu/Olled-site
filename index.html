@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OLLED • Portfólio</title>
+  <meta name="description" content="Tecnologia LED e eficiência para sua casa. Descubra nossa coleção de produtos de iluminação de alta qualidade." />
+
+  <!-- CSS principal -->
+<link rel="stylesheet" href="./styles.css?v=6" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+  <!-- DEBUG (borda vermelha) — deixe comentado quando não precisar -->
+  <!-- <style>body{outline:6px solid red !important;}</style> -->
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="OLLED">
+        <img class="logo" src="./assets/Olled logo.png" alt="OLLED Logo">
+      </a>
+
+      <nav class="navLinks" aria-label="Navegação">
+        <a href="./produtos.html">Produtos</a>
+        <a href="./sobre.html">Sobre</a>
+        <a class="ctaNav" href="#contato">Contato</a>
+      </nav>
+
+      <button class="menuBtn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    </div>
+
+    <div class="container mobileNav" id="mobileNav" hidden>
+      <a href="./produtos.html">Produtos</a>
+      <a href="./sobre.html">Sobre</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO (claro) -->
+    <section class="hero">
+      <div class="container heroGrid">
+        <div class="heroTopLogo fade-left">
+          <img src="./assets/Olled logo.png" alt="OLLED">
+        </div>
+
+        <div class="heroText reveal">
+          <div class="dots"><span></span><span></span><span></span><span></span></div>
+
+          <h1>Eleve sua iluminação</h1>
+
+          <p class="lead">
+            Tecnologia LED e eficiência para sua casa.<br>
+            Descubra nossa coleção de produtos de iluminação de alta qualidade.
+          </p>
+
+          <div class="heroActions">
+            <a class="btn primary" href="#produtos">Ver Produtos</a>
+            <a class="btn ghost" href="#contato">Entrar em Contato</a>
+          </div>
+        </div>
+
+        <div class="heroMedia reveal">
+          <img
+            src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663096299728/ddxhpDXAuGaHuXfw.png"
+            alt="Produtos LED OLLED"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+<!-- PRODUTOS -->
+    <section class="section products" id="produtos">
+      <div class="container">
+        <div class="dots"><span></span><span></span><span></span><span></span></div>
+
+        <h2>Nossa Coleção</h2>
+        <p>Produtos cuidadosamente selecionados para atender seus desejos e necessidades. Qualidade premium em cada detalhe.</p>
+
+        <div class="grid">
+          <article class="card reveal">
+            <img src="./assets/Luminaria.png?v=6" alt="Luminária 200w Bivolt" loading="lazy">
+            <div class="cardBody">
+              <div class="badgeTop">Iluminação</div>
+              <h3>Luminária 200w Bivolt</h3>
+              <p>Iluminação potente e eficiente para qualquer ambiente</p>
+              <a class="btn" href="#contato">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <img src="./assets/LED SOLAR.png" alt="Led Solar Multifuncional" loading="lazy">
+            <div class="cardBody">
+              <div class="badgeTop">Iluminação</div>
+              <h3>Lanterna Camping Solar</h3>
+              <p>Ilumináção para todos os lugares</p>
+              <a class="btn" href="#contato">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <img src="./assets/Placas.png" alt="Lumiária 300w" loading="lazy"
+              onerror="this.src='https://via.placeholder.com/1200x900?text=Produto+3'">
+            <div class="cardBody">
+              <div class="badgeTop">Iluminação</div>
+              <h3>Placa Para Reposição</h3>
+              <p>Gaste menos e ilumine mais</p>
+              <a class="btn" href="#contato">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <img src="./assets/lanterna.png" alt="Lanterna De LED" loading="lazy"
+              onerror="this.src='https://via.placeholder.com/1200x900?text=Produto+4'">
+            <div class="cardBody">
+              <div class="badgeTop">Iluminação</div>
+              <h3>Lanterna de LED</h3>
+              <p>Lanterna De Emergência Efeito Sonoro</p>
+              <a class="btn" href="#contato">Ver detalhes</a>
+            </div>
+          </article>
+        </div>
+
+<!-- GALERIA -->
+<section class="section gallery" id="galeria">
+  <div class="container">
+    <div class="dots"><span></span><span></span><span></span><span></span></div>
+
+    <h2>Produtos Em Ação</h2>
+    <p>Alguns exemplos de como a iluminação transforma o espaço.</p>
+
+    <div class="galleryGrid">
+     <img class="reveal" src="./assets/Galeria/Ambiente1.jpeg" alt="Ambiente iluminado 1" loading="lazy">
+<img class="reveal" src="./assets/Galeria/Ambiente2.jpeg" alt="Ambiente iluminado 2" loading="lazy">
+<img class="reveal" src="./assets/Galeria/Ambiente3.jpeg" alt="Ambiente iluminado 3" loading="lazy">
+<img class="reveal" src="./assets/Galeria/Ambiente4.jpeg" alt="Ambiente iluminado 4" loading="lazy">
+
+    </div>
+  </div>
+</section>
+
+    <!-- SEÇÃO ESCURA (igual ao print com lâmpada) -->
+    <section class="section-dark" id="sobre">
+      <div class="container reveal">
+        <div class="dots"><span></span><span></span><span></span><span></span></div>
+
+        <h2>Ilumine Seu Caminho</h2>
+        <p>
+          Tecnologia LED que transforma espaços e cria momentos inesquecíveis.
+          Eficiência, durabilidade e beleza em cada produto.
+        </p>
+
+        <a class="btn primary" href="#marketplaces">mais</a>
+      </div>
+    </section>
+
+
+
+<div class="videoWrap">
+  <div class="videoBox">
+
+  <section class="section" id="videos">
+  <div class="container">
+
+    <!-- NOVO TOPO BONITO -->
+    <div class="videoHead reveal">
+      <div class="videoFilters reveal">
+  <button class="videoFilterBtn active" data-filter="all" type="button">Todos</button>
+  <button class="videoFilterBtn" data-filter="postos" type="button">Postos</button>
+  <button class="videoFilterBtn" data-filter="galpoes" type="button">Galpões</button>
+  <button class="videoFilterBtn" data-filter="igrejas" type="button">Igrejas</button>
+</div>
+
+      <div>
+        <div class="dots">
+          <span></span><span></span><span></span><span></span>
+        </div>
+
+        <h2>Vídeos em Destaque</h2>
+        <p>Assista alguns exemplos do nosso trabalho em ação.</p>
+      </div>
+
+      <a class="videoCTA"
+         href="https://www.tiktok.com/@ollederierfreire"
+         target="_blank"
+         rel="noopener">
+         Ver mais
+      </a>
+
+    </div>
+
+ <div class="rail" id="videoRail">
+  <button class="railBtn prev" type="button" aria-label="Voltar">‹</button>
+
+  <div class="railViewport">
+    <div class="railTrack">
+     <article class="railCard reveal" data-video="./assets/video-olled.mp4">
+  <img class="railThumb" src="./assets/Cadeados.png" alt="Vídeo OLLED">
+        <div class="railOverlay">
+          <div class="playBadge">▶</div>
+          <div class="playText">Assistir</div>
+        </div>
+      </article>
+
+    <article class="railCard reveal" data-video="./assets/video lanterna.mp4">
+  <img class="railThumb" src="./assets/Lanterna-militar .png" alt="Vídeo lanterna" loading="lazy">
+  <div class="railOverlay">
+    <div class="playBadge">▶</div>
+    <div class="playText">Assistir</div>
+  </div>
+</article>
+
+     <article class="railCard reveal" data-video="./assets/Cadeado 20mm.mp4">
+ <img class="railThumb" src="./assets/cadeado.png" alt="Cadeado 20mm">
+        <div class="railOverlay">
+          <div class="playBadge">▶</div>
+          <div class="playText">Assistir</div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <button class="railBtn next" type="button" aria-label="Avançar">›</button>
+</div>
+
+<!-- MARKETPLACES -->
+<section id="marketplaces" class="section">
+  <div class="container">
+    <div class="contactTitleTop reveal">
+      <div class="dots" style="justify-content:center;"><span></span><span></span><span></span><span></span></div>
+      <h2>Marketplaces</h2>
+      <p>Encontre a OLLED nos principais marketplaces</p>
+    </div>
+
+    <div class="contactGrid">
+
+<a class="contactCard reveal shopee" href="https://shopee.com.br/erierfreire?categoryId=100633&entryPoint=ShopByPDP&itemId=18905946533" target="_blank">        <div class="icon">
+          <img src="./assets/shopee.png" alt="Shopee">
+        </div>
+        <div class="contactText">
+          <div class="contactTitle">Shopee</div>
+          <div class="contactValue">Comprar na Shopee</div>
+          
+        </div>
+      </a>
+<a class="contactCard reveal magalu" href="https://www.magazineluiza.com.br/lojista/eirierfreire/" target="_blank" rel="noopener">
+  <div class="icon">
+    <img src="./assets/magalu.png" alt="Magalu">
+  </div>
+  <div class="contactText">
+    <div class="contactTitle">Magalu</div>
+    <div class="contactValue">Comprar no Magalu</div>
+  </div>
+</a>
+
+      <a class="contactCard reveal tiktok" href="https://www.tiktok.com/@ollederierfreire" target="_blank" rel="noopener">
+        <div class="icon">
+          <img src="./assets/tiktok.svg" alt="TikTok">
+        </div>
+        <div class="contactText">
+          <div class="contactTitle">TikTok</div>
+          <div class="contactValue">Comprar no TikTok</div>
+        </div>
+      </a>
+
+      <a class="contactCard reveal ml" href="https://www.mercadolivre.com.br/pagina/erierfreireolled" target="_blank" rel="noopener">
+  <div class="icon">
+    <img src="./assets/mercadolivre.png" alt="Mercado Livre">
+  </div>
+  <div class="contactText">
+    <div class="contactTitle">Mercado Livre</div>
+    <div class="contactValue">Comprar no Mercado Livre</div>
+  </div>
+</a>
+
+    </div>
+  </div>
+</section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+      <div class="container">
+        <div class="contactTitleTop reveal">
+          <div class="dots" style="justify-content:center;"><span></span><span></span><span></span><span></span></div>
+          <h2>Entre em Contato</h2>
+          <p>
+            Estamos prontos para conversar sobre nossos produtos e oportunidades.
+            Escolha o melhor canal para se comunicar conosco.
+          </p>
+        </div>
+
+        <div class="contactGrid">
+          <a class="contactCard reveal whatsapp" href="https://wa.me/5511982139222" target="_blank" rel="noopener">
+            <div class="icon">
+               <i class="fa-brands fa-whatsapp"></i>
+                 </div>
+            <div class="contactText">
+              <div class="contactTitle">WhatsApp</div>
+              <div class="contactValue">(11) 98213-9222</div>
+            </div>
+          </a>
+
+          <a class="contactCard reveal instagram" href="https://instagram.com/olledbr" target="_blank" rel="noopener">
+            <div class="icon">
+        <i class="fa-brands fa-instagram"></i>
+           </div>
+            <div class="contactText">
+              <div class="contactTitle">Instagram</div>
+              <div class="contactValue">@olledbr</div>
+            </div>
+          </a>
+
+          <a class="contactCard reveal tiktok" href="https://tiktok.com/@ollederierfreire" target="_blank" rel="noopener">
+            <div class="icon">
+             <i class="fa-brands fa-tiktok"></i>
+                </div>
+            <div class="contactText">
+              <div class="contactTitle">TikTok</div>
+              <div class="contactValue">@ollederierfreire</div>
+            </div>
+          </a>
+
+          <a class="contactCard reveal email" href="mailto:contato@olle.com.br">
+            <div class="icon">
+             <i class="fa-solid fa-envelope"></i>
+               </div>
+            <div class="contactText">
+              <div class="contactTitle">E-mail</div>
+              <div class="contactValue">contatolled@gmail.com</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="contactCta reveal">
+          <h3>Pronto para começar?</h3>
+          <p>
+            Clique em qualquer um dos canais acima para entrar em contato direto conosco.
+            Responderemos assim que possível!
+          </p>
+          <a class="btn" href="https://wa.me/5511982139222" target="_blank" rel="noopener">Mensagem</a>
+        </div>
+      </div>
+    </section>
+  </main>
+<section class="feedback-section" id="feedbacks">
+  <div class="container">
+    <div class="feedbackHead reveal">
+      <h2 class="section-title">O que nossos clientes dizem</h2>
+      <p class="section-subtitle">Feedbacks reais de quem já iluminou com a OLLED.</p>
+    </div>
+
+    <div class="fbRail reveal" id="feedbackRail" aria-label="Carrossel de feedbacks">
+      <button class="fbBtn prev" type="button" aria-label="Voltar">‹</button>
+
+      <div class="fbViewport" tabindex="0">
+        <div class="fbTrack">
+          <!-- CARD 01 -->
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“Instalamos as luminárias da OLLED no nosso posto e a diferença foi absurda. Iluminação forte e economia real.”</p>
+            <div class="fbAuthor">
+              <strong>Posto Ipiranga</strong>
+              <span>São Paulo - SP</span>
+            </div>
+          </article>
+
+          <!-- CARD 02 -->
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“Atendimento excelente e entrega rápida. Iluminamos todo o galpão com padrão profissional.”</p>
+            <div class="fbAuthor">
+              <strong>Rossi Supermercado</strong>
+              <span>Interior - SP</span>
+            </div>
+          </article>
+
+          <!-- CARD 03 -->
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“Qualidade superior e acabamento impecável. Recomendo para projetos grandes.”</p>
+            <div class="fbAuthor">
+              <strong>Coco Bambu</strong>
+              <span>Brasil</span>
+            </div>
+          </article>
+
+          <!-- +15 novos (exemplos) -->
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“A iluminação ficou uniforme e muito mais segura. O pátio inteiro mudou de nível.”</p>
+            <div class="fbAuthor"><strong>Posto Shell</strong><span>SP</span></div>
+          </article>
+
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“Potência real. Não é ‘promessa’. Produto robusto e muito bem construído.”</p>
+            <div class="fbAuthor"><strong>Watt Postos</strong><span>SP</span></div>
+          </article>
+
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“Compramos para área externa e ficou perfeito. Luz forte, sem falhas, e instalação fácil.”</p>
+            <div class="fbAuthor"><strong>Cliente OLLED</strong><span>MG</span></div>
+          </article>
+
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“Depois que trocamos pra LED, reduziu manutenção e melhorou o visual do ambiente.”</p>
+            <div class="fbAuthor"><strong>Rodão Lojas</strong><span>SP</span></div>
+          </article>
+
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“Entrega rápida e suporte bom. A equipe ajudou a escolher a solução certa.”</p>
+            <div class="fbAuthor"><strong>Cliente OLLED</strong><span>PR</span></div>
+          </article>
+
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“Instalamos no galpão e parece outro lugar. Claridade absurda.”</p>
+            <div class="fbAuthor"><strong>Cliente OLLED</strong><span>SC</span></div>
+          </article>
+
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“Ótimo custo-benefício. Produto premium com preço justo.”</p>
+            <div class="fbAuthor"><strong>Cliente OLLED</strong><span>RJ</span></div>
+          </article>
+
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“A fachada ficou muito mais bonita e valorizou a loja.”</p>
+            <div class="fbAuthor"><strong>Cliente OLLED</strong><span>BA</span></div>
+          </article>
+
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“Material resistente. Aguentou bem chuva e uso contínuo.”</p>
+            <div class="fbAuthor"><strong>Cliente OLLED</strong><span>GO</span></div>
+          </article>
+
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“O pátio ficou muito mais claro e seguro. Recomendo demais.”</p>
+            <div class="fbAuthor"><strong>Cliente OLLED</strong><span>RS</span></div>
+          </article>
+
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“Produto chegou bem embalado e funcionando perfeito. Excelente.”</p>
+            <div class="fbAuthor"><strong>Cliente OLLED</strong><span>SP</span></div>
+          </article>
+
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“A luz ficou muito mais ‘limpa’. Qualidade de iluminação top.”</p>
+            <div class="fbAuthor"><strong>Cliente OLLED</strong><span>DF</span></div>
+          </article>
+
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“Atendeu exatamente o que eu precisava pro meu projeto.”</p>
+            <div class="fbAuthor"><strong>Cliente OLLED</strong><span>CE</span></div>
+          </article>
+
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“Mudou totalmente a percepção do ambiente. Ficou premium.”</p>
+            <div class="fbAuthor"><strong>Cliente OLLED</strong><span>PE</span></div>
+          </article>
+
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“Economia no longo prazo e iluminação forte desde o primeiro dia.”</p>
+            <div class="fbAuthor"><strong>Cliente OLLED</strong><span>ES</span></div>
+          </article>
+
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“Comprar com a OLLED foi tranquilo, atendimento rápido e solução certeira.”</p>
+            <div class="fbAuthor"><strong>Cliente OLLED</strong><span>AM</span></div>
+          </article>
+
+          <article class="fbCard">
+            <div class="fbStars" aria-hidden="true">★★★★★</div>
+            <p class="fbText">“Valeu cada centavo. Produto muito acima da média.”</p>
+            <div class="fbAuthor"><strong>Cliente OLLED</strong><span>SP</span></div>
+          </article>
+        </div>
+      </div>
+
+      <button class="fbBtn next" type="button" aria-label="Avançar">›</button>
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+  <footer class="footer">
+    <div class="container footerGrid">
+      <div class="footerBrand">
+        <img class="logo" src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663096299728/YKeuuQJrWALnEjJI.png" alt="OLLED Logo">
+        <p>Produtos premium para seu estilo de vida.</p>
+      </div>
+
+      <div class="footerCol">
+        <h4>Links Rápidos</h4>
+        <a href="./produtos.html">Produtos</a>
+        <a href="#contato">Contato</a>
+      </div>
+
+      <div class="footerCol">
+        <h4>Redes Sociais</h4>
+        <a href="https://instagram.com/olledbr" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://tiktok.com/@ollederierfreire" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://wa.me/5511982139222" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="container footerBottom">
+      <span>Direitos autorais © 2026 OLLED. Todos os direitos reservados.</span>
+      <span>Feito com 💚 por OLLED</span>
+    </div>
+  </footer>
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<a href="https://wa.me/5511982139222"
+   class="whatsappFloat"
+   target="_blank"
+   aria-label="Falar no WhatsApp">
+
+   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        alt="WhatsApp">
+</a>
+
+
+  <div class="videoModal" id="videoModal">
+
+  <div class="videoModalBackdrop" data-close="true"></div>
+
+  <div class="videoModalBox">
+
+    <button class="videoModalClose" data-close="true">✕</button>
+
+    <div class="videoModalPlayer">
+      <video id="videoModalPlayer" controls autoplay></video>
+    </div>
+
+  </div>
+
+</div>
+</body>
+
+<script src="./script.js"></script>
+</body>
+</html>
