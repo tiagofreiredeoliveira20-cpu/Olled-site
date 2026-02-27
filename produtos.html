@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OLLED • Produtos</title>
+  <meta name="description" content="Produtos OLLED – veja a coleção completa e acesse a página de detalhes de cada item." />
+
+  <!-- Mesmo CSS do site -->
+  <link rel="stylesheet" href="./styles.css?v=7" />
+</head>
+
+<body>
+  <!-- NAV (igual do index) -->
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="./index.html#top" aria-label="OLLED">
+        <img class="logo" src="./assets/Olled logo.png" alt="OLLED Logo">
+      </a>
+
+      <nav class="navLinks" aria-label="Navegação">
+        <a href="./produtos.html" aria-current="page">Produtos</a>
+        <a href="./sobre.html">Sobre</a>
+        <a class="ctaNav" href="./index.html#contato">Contato</a>
+      </nav>
+
+      <button class="menuBtn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    </div>
+
+    <div class="container mobileNav" id="mobileNav" hidden>
+      <a href="./produtos.html">Produtos</a>
+      <a href="./sobre.html">Sobre</a>
+      <a href="./index.html#contato">Contato</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO / TOPO -->
+    <section class="pageHero">
+      <div class="container reveal">
+        <div class="dots"><span></span><span></span><span></span><span></span></div>
+        <h1>Nossa coleção</h1>
+        <p class="lead" style="max-width: 780px;">
+          Escolha um produto para ver detalhes, especificações e botões de WhatsApp/compra nas landing pages.
+        </p>
+      </div>
+    </section>
+
+    <!-- GRID DE PRODUTOS (mesmo padrão do index) -->
+    <section class="section products">
+      <div class="container">
+        <div class="grid">
+  <!-- 01 -->
+  <article class="card reveal">
+    <img src="./assets/Luminaria.png?v=6" alt="Produto 01" loading="lazy"
+         onerror="this.src='https://via.placeholder.com/1200x900?text=Produto+01'">
+    <div class="cardBody">
+      <div class="badgeTop">Iluminação</div>
+      <h3>Luminária 200w Bivolt</h3>
+      <p>Iluminação de alto desempenho com eficiência energética e durabilidade profissional para grandes ambientes.</p>
+      <a class="btn js-product-open" href="#" data-product="p1">Ver detalhes</a>
+    </div>
+  </article>
+
+  <!-- 02 -->
+  <article class="card reveal">
+    <img src="./assets/LED SOLAR.png" alt="Produto 02" loading="lazy"
+         onerror="this.src='https://via.placeholder.com/1200x900?text=Produto+02'">
+    <div class="cardBody">
+      <div class="badgeTop">Iluminação</div>
+      <h3>Lanterna de Camping Solar</h3>
+      <p>Iluminação solar moderna, forte e econômica — ideal para áreas externas com instalação simples e autonomia real.</p>
+      <a class="btn js-product-open" href="#" data-product="p2">Ver detalhes</a>
+    </div>
+  </article>
+
+  <!-- 03 -->
+  <article class="card reveal">
+    <img src="./assets/Placas.png" alt="Produto 03" loading="lazy"
+         onerror="this.src='https://via.placeholder.com/1200x900?text=Produto+03'">
+    <div class="cardBody">
+      <div class="badgeTop">Iluminação</div>
+      <h3>Placa De Reposição 200w Bivolt</h3>
+      <p>Luz uniforme e acabamento clean para projetos que precisam de visual moderno e eficiência.</p>
+      <a class="btn js-product-open" href="#" data-product="p3">Ver detalhes</a>
+    </div>
+  </article>
+
+  <!-- 04 -->
+  <article class="card reveal">
+    <img src="./assets/lanterna.png" alt="Produto 04" loading="lazy"
+         onerror="this.src='https://via.placeholder.com/1200x900?text=Produto+04'">
+    <div class="cardBody">
+      <div class="badgeTop">Iluminação</div>
+      <h3>Lanterna Solar Emergência</h3>
+      <p>Compacto, potente e prático — feito para entregar luz forte onde você mais precisa.</p>
+      <a class="btn js-product-open" href="#" data-product="p4">Ver detalhes</a>
+    </div>
+  </article>
+
+  <!-- 05 -->
+  <article class="card reveal">
+    <img src="./assets/Cadeados.png" alt="Produto 05" loading="lazy"
+         onerror="this.src='https://via.placeholder.com/1200x900?text=Produto+05'">
+    <div class="cardBody">
+      <div class="badgeTop">Linha OLLED</div>
+      <h3>Cadeado De 20mm </h3>
+      <p>Proteção reforçada com construção robusta e padrão de qualidade para uso diário.</p>
+      <a class="btn js-product-open" href="#" data-product="p5">Ver detalhes</a>
+    </div>
+  </article>
+
+  <!-- 06 -->
+  <article class="card reveal">
+    <img src="./assets/cadeado.png" alt="Produto 06" loading="lazy"
+         onerror="this.src='https://via.placeholder.com/1200x900?text=Produto+06'">
+    <div class="cardBody">
+      <div class="badgeTop">Linha OLLED</div>
+      <h3>Cadeado De 30mm</h3>
+      <p>Mais segurança com design compacto e resistência para diferentes aplicações.</p>
+      <a class="btn js-product-open" href="#" data-product="p6">Ver detalhes</a>
+    </div>
+  </article>
+
+  <!-- 07 -->
+  <article class="card reveal">
+    <img src="./assets/prod-07.jpg" alt="Produto 07" loading="lazy"
+         onerror="this.src='https://via.placeholder.com/1200x900?text=Produto+07'">
+    <div class="cardBody">
+      <div class="badgeTop">Linha OLLED</div>
+      <h3>Refletor 200w Testeira</h3>
+      <p>Visual moderno, eficiência e durabilidade — solução certeira para quem quer padrão profissional.</p>
+      <a class="btn js-product-open" href="#" data-product="p7">Ver detalhes</a>
+    </div>
+  </article>
+
+  <!-- 08 -->
+  <article class="card reveal">
+    <img src="./assets/prod-08.jpg" alt="Produto 08" loading="lazy"
+         onerror="this.src='https://via.placeholder.com/1200x900?text=Produto+08'">
+    <div class="cardBody">
+      <div class="badgeTop">Linha OLLED</div>
+      <h3>Massaeador 100v/220v</h3>
+      <p>Alto desempenho com baixo consumo — perfeito para ambientes que exigem luz forte o tempo todo.</p>
+      <a class="btn js-product-open" href="#" data-product="p8">Ver detalhes</a>
+    </div>
+  </article>
+
+  <!-- 09 -->
+  <article class="card reveal">
+    <img src="./assets/prod-09.jpg" alt="Produto 09" loading="lazy"
+         onerror="this.src='https://via.placeholder.com/1200x900?text=Produto+09'">
+    <div class="cardBody">
+      <div class="badgeTop">Linha OLLED</div>
+      <h3>Máquina de cortao cabelo dragão</h3>
+      <p>Iluminação consistente e acabamento premium para elevar o padrão do seu espaço.</p>
+      <a class="btn js-product-open" href="#" data-product="p9">Ver detalhes</a>
+    </div>
+  </article>
+
+  <!-- 10 -->
+  <article class="card reveal">
+    <img src="./assets/prod-10.jpg" alt="Produto 10" loading="lazy"
+         onerror="this.src='https://via.placeholder.com/1200x900?text=Produto+10'">
+    <div class="cardBody">
+      <div class="badgeTop">Linha OLLED</div>
+      <h3>Interruptor Inteligente Controle</h3>
+      <p>Potência, economia e confiabilidade no mesmo produto — feito para durar e performar.</p>
+      <a class="btn js-product-open" href="#" data-product="p10">Ver detalhes</a>
+    </div>
+  </article>
+</div>
+
+  <!-- JS do site (menu mobile + reveal) -->
+        </div> <!-- .container -->
+    </section>
+  </main>
+
+   <div class="pmHeaderLine"></div>
+<div class="videoModal" id="productModal" aria-hidden="true">
+  <div class="videoModalBackdrop" data-close="product"></div>
+
+  <div class="videoModalBox productModalBox" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+    <button class="videoModalClose" type="button" data-close="product" aria-label="Fechar">✕</button>
+
+    <div style="padding:18px;">
+      <div style="display:grid; grid-template-columns: 1fr;; gap:18px; align-items:start;" class="pmGrid">
+
+     <div>
+<div class="mediaRow">
+
+  <div class="mediaImage">
+    <img id="productModalImg"
+         src=""
+         alt=""
+         style="width:100%; height:360px; object-fit:cover; border-radius:16px; border:1px solid rgba(0,0,0,.08); background:#fff;">
+  </div>
+
+  <div class="mediaVideo" id="productVideoWrap" style="display:none;">
+    <video id="productModalVideo"
+           controls
+           playsinline
+           style="width:100%; max-height:260px; border-radius:16px; background:#0b1220;">
+    </video>
+  </div>
+
+</div>
+
+        <div>
+          <div class="badgeTop" id="productModalBadge">Produto</div>
+          <h2 id="productModalTitle" style="margin:10px 0 8px;"></h2>
+          <p id="productModalDesc" style="margin:0 0 10px; opacity:.88;"></p>
+
+          <div id="productModalSpecs" style="display:flex; flex-wrap:wrap; gap:10px; margin: 10px 0 10px;"></div>
+
+          <h4 style="margin:14px 0 8px;">Características</h4>
+          <ul id="productModalList" style="margin:0; padding-left:18px; line-height:1.6;"></ul>
+
+       
+
+        <h4 style="margin:18px 0 8px;">Ver nos Marketplaces</h4>
+
+        <div class="pmActions">
+  <a class="pmLink pmLinkWhats" id="productModalWhats" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg class="wppIcon" viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.42c-.27-.14-1.6-.79-1.85-.88-.25-.09-.44-.14-.62.14-.18.27-.71.88-.87 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.2-1.35-.81-.72-1.35-1.6-1.51-1.87-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.46.09-.18.05-.34-.02-.48-.07-.14-.62-1.5-.85-2.05-.22-.54-.44-.46-.62-.46h-.53c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3s.99 2.67 1.12 2.85c.14.18 1.95 2.97 4.72 4.17.66.28 1.18.45 1.58.58.66.21 1.26.18 1.74.11.53-.08 1.6-.66 1.83-1.3.23-.64.23-1.18.16-1.3-.06-.11-.25-.18-.52-.32z"/>
+      <path d="M16 3C8.83 3 3 8.83 3 16c0 2.24.6 4.43 1.74 6.35L3 29l6.85-1.68A12.95 12.95 0 0 0 16 29c7.17 0 13-5.83 13-13S23.17 3 16 3zm0 23.5c-2.02 0-4.01-.54-5.76-1.56l-.41-.24-4.06.99 1.08-3.96-.27-.44A10.48 10.48 0 0 1 5.5 16C5.5 10.21 10.21 5.5 16 5.5S26.5 10.21 26.5 16 21.79 26.5 16 26.5z"/>
+    </svg>
+  </a>
+</div>
+        <div class="marketLinks" id="productModalMarkets"></div>
+                </div> <!-- fecha coluna direita -->
+      </div> <!-- fecha .pmGrid -->
+    </div> <!-- fecha padding -->
+  </div> <!-- fecha .videoModalBox -->
+</div> <!-- fecha .videoModal -->
+</div>  
+<style>
+@media (max-width: 860px){
+  .pmGrid{ grid-template-columns: 1fr !important; }
+  #productModalImg{ height: 240px !important; }
+}
+
+</style>
+
+<footer class="footer">
+    <div class="container footerGrid">
+      <div class="footerBrand">
+        <img class="logo" src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663096299728/YKeuuQJrWALnEjJI.png" alt="OLLED Logo">
+        <p>Produtos premium para seu estilo de vida.</p>
+      </div>
+
+      <div class="footerCol">
+        <h4>Links Rápidos</h4>
+        <a href="./produtos.html">Produtos</a>
+        <a href="./index.html#contato">Contato</a>
+      </div>
+
+      <div class="footerCol">
+        <h4>Redes Sociais</h4>
+        <a href="https://instagram.com/olledbr" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://tiktok.com/@ollederierfreire" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://wa.me/5511982139222" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="container footerBottom">
+      <span>Direitos autorais © 2026 OLLED. Todos os direitos reservados.</span>
+      <span>Feito com 💚 por OLLED</span>
+    </div>
+  </footer>
+<script src="./script.js" defer></script>
+
+</body>
+</html>
