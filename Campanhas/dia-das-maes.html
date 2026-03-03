@@ -214,49 +214,63 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
 
-  <!-- ✅ MODAL DE PRODUTO (IDs que o script.js espera) -->
-  <div class="productModal" id="productModal" aria-hidden="true">
-    <div class="productModalOverlay" data-close="product"></div>
+  <!-- MODAL PRODUTO (mesmo do index.html) -->
+<div class="videoModal" id="productModal" aria-hidden="true">
+  <div class="videoModalBackdrop" data-close="product"></div>
 
-    <div class="productModalBox" role="dialog" aria-modal="true" aria-label="Detalhes do produto">
-      <button class="productModalClose" data-close="product" aria-label="Fechar">✕</button>
+  <div class="videoModalBox productModalBox" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+    <button class="videoModalClose" type="button" data-close="product" aria-label="Fechar">✕</button>
 
-      <div class="pmHeader">
-        <div class="pmBadge" id="productModalBadge">Produto</div>
-        <h3 class="pmTitle" id="productModalTitle">Título</h3>
-        <p class="pmDesc" id="productModalDesc">Descrição</p>
-      </div>
+    <div style="padding:18px;">
+      <div class="pmGrid" style="display:grid; grid-template-columns: 1fr; gap:18px; align-items:start;">
 
-      <div class="pmGrid">
-        <div class="pmLeft">
+        <div>
           <div class="mediaRow">
             <div class="mediaImage">
-              <img id="productModalImg" src="" alt="Imagem do produto" />
+              <img id="productModalImg" src="" alt=""
+                style="width:100%; height:360px; object-fit:cover; border-radius:16px; border:1px solid rgba(0,0,0,.08); background:#fff;">
             </div>
 
             <div class="mediaVideo" id="productVideoWrap" style="display:none;">
-              <div class="videoBox">
-                <video id="productModalVideo" controls playsinline></video>
-              </div>
+              <video id="productModalVideo" controls playsinline
+                style="width:100%; max-height:260px; border-radius:16px; background:#0b1220;"></video>
             </div>
           </div>
 
-          <ul class="pmList" id="productModalList"></ul>
-        </div>
+          <div>
+            <div class="badgeTop" id="productModalBadge">Produto</div>
+            <h2 id="productModalTitle" style="margin:10px 0 8px;"></h2>
+            <p id="productModalDesc" style="margin:0 0 10px; opacity:.88;"></p>
 
-        <div class="pmRight">
-          <div class="pmSpecs" id="productModalSpecs"></div>
+            <div id="productModalSpecs" style="display:flex; flex-wrap:wrap; gap:10px; margin:10px 0;"></div>
 
-          <div class="pmActions">
-            <a class="btn primary" id="productModalWhats" href="#" target="_blank" rel="noopener">Falar no WhatsApp</a>
-            <a class="btn ghost" id="productModalBuy" href="#" target="_blank" rel="noopener">Comprar online</a>
+            <h4 style="margin:14px 0 8px;">Características</h4>
+            <ul id="productModalList" style="margin:0; padding-left:18px; line-height:1.6;"></ul>
+
+            <h4 style="margin:18px 0 8px;">Ver nos Marketplaces</h4>
+
+            <div class="pmActions">
+              <a class="pmLink pmLinkWhats" id="productModalWhats" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <!-- ícone do wpp (pode manter como está no index) -->
+                WhatsApp
+              </a>
+            </div>
+
+            <div class="marketLinks" id="productModalMarkets"></div>
           </div>
-
-          <div class="pmMarkets" id="productModalMarkets"></div>
         </div>
+
       </div>
     </div>
   </div>
+</div>
+
+<style>
+@media (max-width: 860px){
+  .pmGrid{ grid-template-columns: 1fr !important; }
+  #productModalImg{ height: 240px !important; }
+}
+</style>
 
   <!-- JS do site (note o ../) -->
   <script src="../script.js?v=6"></script>
