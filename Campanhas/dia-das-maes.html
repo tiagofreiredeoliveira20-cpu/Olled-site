@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OLLED • Dia das Mães</title>
+  <meta name="description" content="Especial Dia das Mães OLLED – presentes com iluminação premium para surpreender." />
+
+  <!-- CSS do site (note o ../ porque estamos dentro de /campanhas) -->
+  <link rel="stylesheet" href="../styles.css?v=6" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Ajustes bem leves só para a campanha */
+    .campHero{
+      background: linear-gradient(180deg, #ffffff 0%, #f6f7f9 70%);
+      border-bottom: 1px solid rgba(0,0,0,.06);
+      padding: 86px 0 56px;
+    }
+    .campHeroInner{ max-width: 980px; }
+    .campHero h1{
+      margin: 18px 0 12px;
+      font-size: clamp(30px, 3.6vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .campHero p{
+      max-width: 760px;
+      line-height: 1.8;
+      margin: 0 0 18px;
+    }
+    .campPills{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top: 16px;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.08);
+      box-shadow: 0 12px 28px rgba(2,6,23,.06);
+      font-weight: 800;
+      font-size: 13px;
+      color: #0b1220;
+    }
+    .pill i{ color: var(--green); }
+
+    .campNote{
+      margin-top: 18px;
+      display:flex; gap:12px; align-items:flex-start;
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 16px;
+      padding: 16px 16px;
+      box-shadow: 0 12px 28px rgba(2,6,23,.06);
+      color: #0b1220;
+    }
+    .campNote i{ margin-top: 2px; color: var(--green); }
+    .campNote strong{ display:block; margin-bottom: 4px; }
+
+    .campCtaRow{ display:flex; gap:12px; flex-wrap:wrap; margin-top: 22px; }
+  </style>
+</head>
+
+<body>
+  <!-- NAV (igual ao site, com links voltando pra raiz via ../) -->
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="../index.html#top" aria-label="OLLED">
+        <img class="logo" src="../assets/Olled logo.png" alt="OLLED Logo">
+      </a>
+
+      <nav class="navLinks" aria-label="Navegação">
+        <a href="../produtos.html">Produtos</a>
+        <a href="../sobre.html">Sobre</a>
+        <a class="ctaNav" href="../index.html#contato">Contato</a>
+      </nav>
+
+      <button class="menuBtn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    </div>
+
+    <div class="container mobileNav" id="mobileNav" hidden>
+      <a href="../produtos.html">Produtos</a>
+      <a href="../sobre.html">Sobre</a>
+      <a href="../index.html#contato">Contato</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO CAMPANHA -->
+    <section class="campHero">
+      <div class="container campHeroInner reveal">
+        <div class="dots"><span></span><span></span><span></span><span></span></div>
+        <h1>Especial Dia das Mães 💚</h1>
+        <p class="lead">
+          Presentes que transformam ambientes: iluminação premium, moderna e com aquele “uau” que toda mãe merece.
+          Selecione um produto abaixo para ver detalhes, vídeo e comprar nos marketplaces.
+        </p>
+
+        <div class="campPills">
+          <div class="pill"><i class="fa-solid fa-bolt"></i> Alta eficiência</div>
+          <div class="pill"><i class="fa-solid fa-star"></i> Visual premium</div>
+          <div class="pill"><i class="fa-solid fa-gift"></i> Ideias de presente</div>
+          <div class="pill"><i class="fa-solid fa-headset"></i> Suporte no WhatsApp</div>
+        </div>
+
+        <div class="campNote">
+          <i class="fa-solid fa-circle-info"></i>
+          <div>
+            <strong>Dica rápida</strong>
+            Clique em <b>“Ver detalhes”</b> para abrir o modal Apple-style com foto/vídeo e links de compra.
+          </div>
+        </div>
+
+        <div class="campCtaRow">
+          <a class="btn primary" href="#ofertas">Ver Ofertas</a>
+          <a class="btn ghost" href="../produtos.html">Ver todos os produtos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFERTAS (usa os mesmos data-product do seu script.js: p1..p10) -->
+    <section class="section products" id="ofertas">
+      <div class="container">
+        <div class="reveal">
+          <h2>Seleção para o Dia das Mães</h2>
+          <p>Escolha uma opção e veja detalhes completos antes de comprar.</p>
+        </div>
+
+        <div class="grid">
+          <!-- p1 -->
+          <article class="card reveal">
+            <img src="../assets/Luminaria.png?v=6" alt="Luminária 200w Bivolt" loading="lazy">
+            <div class="cardBody">
+              <span class="badgeTop">Iluminação</span>
+              <h3>Luminária 200w Bivolt</h3>
+              <p>Potência e economia com acabamento profissional.</p>
+              <a class="btn js-product-open" href="#" data-product="p1">Ver detalhes</a>
+            </div>
+          </article>
+
+          <!-- p2 -->
+          <article class="card reveal">
+            <img src="../assets/LED SOLAR.png" alt="Lanterna de Camping Solar" loading="lazy">
+            <div class="cardBody">
+              <span class="badgeTop">Iluminação</span>
+              <h3>Lanterna de Camping Solar</h3>
+              <p>Presente útil e moderno: autonomia e praticidade.</p>
+              <a class="btn js-product-open" href="#" data-product="p2">Ver detalhes</a>
+            </div>
+          </article>
+
+          <!-- p3..p10: você pode duplicar o bloco e só trocar o data-product e imagem/título -->
+          <article class="card reveal">
+            <img src="../assets/Olled logo.png" alt="Produto OLLED" loading="lazy">
+            <div class="cardBody">
+              <span class="badgeTop">Linha OLLED</span>
+              <h3>Mais opções no modal</h3>
+              <p>Quer mostrar mais itens? Duplique este card e use p3, p4... p10.</p>
+              <a class="btn js-product-open" href="#" data-product="p3">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <img src="../assets/Olled logo.png" alt="Produto OLLED" loading="lazy">
+            <div class="cardBody">
+              <span class="badgeTop">Linha OLLED</span>
+              <h3>Presente premium</h3>
+              <p>Abra o modal e personalize textos/fotos depois.</p>
+              <a class="btn js-product-open" href="#" data-product="p4">Ver detalhes</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="smallCta reveal">
+          <p>Quer ajuda para montar a seleção perfeita? Fale com a gente.</p>
+          <a class="btn" href="https://wa.me/5511982139222" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (mesmo padrão do site) -->
+  <footer class="footer">
+    <div class="container footerGrid">
+      <div class="footerBrand">
+        <img class="logo" src="../assets/Olled logo.png" alt="OLLED Logo">
+        <p>Produtos premium para seu estilo de vida.</p>
+      </div>
+
+      <div class="footerCol">
+        <h4>Links Rápidos</h4>
+        <a href="../produtos.html">Produtos</a>
+        <a href="../index.html#contato">Contato</a>
+      </div>
+
+      <div class="footerCol">
+        <h4>Redes Sociais</h4>
+        <a href="https://instagram.com/olledbr" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://tiktok.com/@ollederierfreire" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://wa.me/5511982139222" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="container footerBottom">
+      <span>Direitos autorais © 2026 OLLED. Todos os direitos reservados.</span>
+      <span>Feito com 💚 por OLLED</span>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="https://wa.me/5511982139222" class="whatsappFloat" target="_blank" aria-label="Falar no WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <!-- ✅ MODAL DE PRODUTO (IDs que o script.js espera) -->
+  <div class="productModal" id="productModal" aria-hidden="true">
+    <div class="productModalOverlay" data-close="product"></div>
+
+    <div class="productModalBox" role="dialog" aria-modal="true" aria-label="Detalhes do produto">
+      <button class="productModalClose" data-close="product" aria-label="Fechar">✕</button>
+
+      <div class="pmHeader">
+        <div class="pmBadge" id="productModalBadge">Produto</div>
+        <h3 class="pmTitle" id="productModalTitle">Título</h3>
+        <p class="pmDesc" id="productModalDesc">Descrição</p>
+      </div>
+
+      <div class="pmGrid">
+        <div class="pmLeft">
+          <div class="mediaRow">
+            <div class="mediaImage">
+              <img id="productModalImg" src="" alt="Imagem do produto" />
+            </div>
+
+            <div class="mediaVideo" id="productVideoWrap" style="display:none;">
+              <div class="videoBox">
+                <video id="productModalVideo" controls playsinline></video>
+              </div>
+            </div>
+          </div>
+
+          <ul class="pmList" id="productModalList"></ul>
+        </div>
+
+        <div class="pmRight">
+          <div class="pmSpecs" id="productModalSpecs"></div>
+
+          <div class="pmActions">
+            <a class="btn primary" id="productModalWhats" href="#" target="_blank" rel="noopener">Falar no WhatsApp</a>
+            <a class="btn ghost" id="productModalBuy" href="#" target="_blank" rel="noopener">Comprar online</a>
+          </div>
+
+          <div class="pmMarkets" id="productModalMarkets"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS do site (note o ../) -->
+  <script src="../script.js?v=6"></script>
+</body>
+</html>

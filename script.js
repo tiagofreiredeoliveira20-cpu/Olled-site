@@ -510,4 +510,80 @@ if (videoWrapEl) videoWrapEl.style.display = "none";
     }
   });
 })();
+// ===============================
+// CAMPANHAS SAZONAIS (Plano A)
+// ===============================
+(function seasonalCampaigns() {
+  // Ajuste para horário do Brasil (evita virar dia errado em alguns PCs)
+  function nowBR() {
+    const now = new Date();
+    // Força referência em pt-BR (uso de data local do dispositivo)
+    return now;
+  }
 
+  // Crie suas campanhas aqui
+  const CAMPAIGNS = [
+    {
+      key: "maes",
+      title: "Especial Dia das Mães",
+      url: "./Campanhas/dia-das-maes.html",
+      // Janela em que fica visível (inclusive)
+      start: "2026-03-01",
+      end:   "2026-05-12",
+    },
+    {
+      key: "pais",
+      title: "Especial Dia dos Pais",
+      url: "./campanhas/dia-dos-pais.html",
+      start: "2026-08-01",
+      end:   "2026-08-11",
+    },
+  ];
+
+  function parseYMD(ymd) {
+    const [y, m, d] = ymd.split("-").map(Number);
+    return new Date(y, m - 1, d, 0, 0, 0, 0);
+  }
+
+  function isActive(c) {
+    const today = nowBR();
+    const start = parseYMD(c.start);
+    const end = parseYMD(c.end);
+    // inclui o dia final
+    end.setHours(23, 59, 59, 999);
+    return today >= start && today <= end;
+  }
+
+  function ensureContainer() {
+    // Container opcional na HOME: <div id="seasonalCampaignSlot"></div>
+    return document.getElementById("seasonalCampaignSlot");
+  }
+
+  function injectHomeBanner(campaign) {
+    const slot = ensureContainer();
+    if (!slot) return;
+
+    slot.innerHTML = `
+      <a class="seasonalBanner reveal" href="${campaign.url}" aria-label="${campaign.title}">
+        <div class="seasonalBanner__title">${campaign.title}</div>
+        <div class="seasonalBanner__cta">Ver ofertas →</div>
+      </a>
+    `;
+  }
+
+  function injectMenuLink(campaign) {
+    // No menu, adicione um <li id="seasonalMenuSlot"></li> onde você quer o link
+    const slot = document.getElementById("seasonalMenuSlot");
+    if (!slot) return;
+
+    slot.innerHTML = `<a href="${campaign.url}">${campaign.title}</a>`;
+  }
+
+  // Encontra a primeira campanha ativa (prioridade pela ordem do array)
+  const active = CAMPAIGNS.find(isActive);
+  if (!active) return;
+
+  // Ativa onde você quiser (home/menu)
+  injectHomeBanner(active);
+  injectMenuLink(active);
+})();
