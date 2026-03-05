@@ -356,56 +356,216 @@ const videoEl = document.getElementById("productModalVideo");
 
   // >>>>>> EDITE AQUI OS PRODUTOS <<<<<<
   // (mesmo que você não coloque markets em um produto, ele usa DEFAULT_MARKETS)
-  const PRODUCTS = {
-    p1: {
-      badge: "Iluminação",
-      video: "./assets/video lanterna.mp4",
-      title: "Luminária 200w Bivolt",
-      desc: "Iluminação de alto desempenho com eficiência energética e durabilidade profissional para grandes ambientes.",
-      img: "./assets/Luminaria.png?v=6",
-      specs: ["Bivolt", "Alta eficiência", "Uso interno/externo"],
-      features: [
-        "Estrutura resistente e durável",
-        "Iluminação potente e uniforme",
-        "Economia de energia com LED",
-        "Ideal para ambientes amplos"
-      ],
-      whatsapp: "https://wa.me/5511982139222?text=Olá!%20Quero%20detalhes%20do%20Produto%2001.",
-      buy: "#",
-      markets: {
-        mercadolivre: "https://www.mercadolivre.com.br/luminaria-posto-de-combustivel-200w-led-22000lm-ip66/up/MLBU1436506402",
-        shopee: "https://shopee.com.br/seu-link-aqui",
-        magalu: "https://www.magazineluiza.com.br/seu-link-aqui"
-      }
-    },
+ // >>>>>> EDITE AQUI OS PRODUTOS <<<<<<
+// (Todos agora têm "markets" editável por produto)
+const PRODUCTS = {
+  p1: {
+    badge: "Iluminação",
+    video: "./assets/video lanterna.mp4",
+    title: "Luminária 200w Bivolt",
+    desc: "Iluminação de alto desempenho com eficiência energética e durabilidade profissional para grandes ambientes.",
+    img: "./assets/Luminaria.png?v=6",
+    specs: ["Bivolt", "Alta eficiência", "Uso interno/externo"],
+    features: [
+      "Estrutura resistente e durável",
+      "Iluminação potente e uniforme",
+      "Economia de energia com LED",
+      "Ideal para ambientes amplos"
+    ],
+    whatsapp: "https://wa.me/5511982139222?text=Olá!%20Quero%20detalhes%20do%20Produto%2001.",
+    buy: "#",
+    markets: {
+      mercadolivre: "https://www.mercadolivre.com.br/luminaria-posto-de-combustivel-200w-led-22000lm-ip66/up/MLBU1436506402",
+      shopee: "https://shopee.com.br/seu-link-aqui",
+      magalu: "https://www.magazineluiza.com.br/seu-link-aqui",
+      tiktok: "https://www.tiktok.com/@seu-perfil"
+    }
+  },
 
-    p2: {
-      badge: "Iluminação",
-      title: "Lanterna De Camping Solar",
-      desc: "Solar forte e moderno: iluminação autônoma com economia real e instalação simples.",
-      img: "./assets/LED SOLAR.png",
-      specs: ["Solar", "Portátil", "Alta autonomia"],
-      features: [
-        "Ideal para áreas externas",
-        "Carregamento solar prático",
-        "Ótima autonomia",
-        "Uso versátil"
-      ],
-      whatsapp: "https://wa.me/5511982139222?text=Olá!%20Quero%20detalhes%20do%20Produto%2002.",
-      buy: "#"
-      // markets: (se não colocar, ele usa DEFAULT_MARKETS automaticamente)
-    },
+  p2: {
+    badge: "Iluminação",
+    title: "Lanterna De Camping Solar",
+    desc: "Solar forte e moderno: iluminação autônoma com economia real e instalação simples.",
+    img: "./assets/LED SOLAR.png",
+    specs: ["Solar", "Portátil", "Alta autonomia"],
+    features: [
+      "Ideal para áreas externas",
+      "Carregamento solar prático",
+      "Ótima autonomia",
+      "Uso versátil"
+    ],
+    whatsapp: "https://wa.me/5511982139222?text=Olá!%20Quero%20detalhes%20do%20Produto%2002.",
+    buy: "#",
+    markets: {
+      mercadolivre: "https://www.mercadolivre.com.br/seu-link-aqui",
+      shopee: "https://shopee.com.br/seu-link-aqui",
+      magalu: "https://www.magazineluiza.com.br/seu-link-aqui",
+      tiktok: "https://www.tiktok.com/@seu-perfil"
+    }
+  },
 
-    p3: { badge: "Linha OLLED", title: "Placa De Reposição 200w Bivolt", desc: "Luz uniforme e acabamento clean para projetos que pedem visual premium.", img: "./assets/Placas.png", specs: ["LED", "Alta durabilidade"], features: ["Característica 1", "Característica 2"], whatsapp: "https://wa.me/5511982139222?text=Produto%2003", buy: "#" },
-    p4: { badge: "Linha OLLED", title: "Lanterna Solar Emergência", desc: "Compacto e potente: iluminação prática para o dia a dia com ótimo alcance.", img: "./assets/lanterna.png", specs: ["Recarregável", "Resistente"], features: ["Característica 1", "Característica 2"], whatsapp: "https://wa.me/5511982139222?text=Produto%2004", buy: "#" },
-    p5: { badge: "Linha OLLED", title: "Cadeado De 20mm", desc: "Segurança e resistência: construção robusta com padrão de qualidade OLLED.", img: "./assets/Cadeados.png", specs: ["Segurança", "Aço"], features: ["Característica 1", "Característica 2"], whatsapp: "https://wa.me/5511982139222?text=Produto%2005", buy: "#" },
-    p6: { badge: "Linha OLLED", title: "Cadeado De 30mm", desc: "Mais proteção no uso diário, com design compacto e durabilidade superior.", img: "./assets/cadeado.png", specs: ["Compacto", "Resistente"], features: ["Característica 1", "Característica 2"], whatsapp: "https://wa.me/5511982139222?text=Produto%2006", buy: "#" },
-    p7: { badge: "Linha OLLED", title: "Refletor 200w Testeira", desc: "Design moderno + eficiência: feito para ambientes comerciais e profissionais.", img: "./assets/prod-07.jpg", specs: ["Info", "Info"], features: ["Característica 1", "Característica 2"], whatsapp: "https://wa.me/5511982139222?text=Produto%2007", buy: "#" },
-    p8: { badge: "Linha OLLED", title: "Massaeador 100v/220v", desc: "Performance alta com baixo consumo, ideal para iluminação constante e forte.", img: "./assets/prod-08.jpg", specs: ["Info", "Info"], features: ["Característica 1", "Característica 2"], whatsapp: "https://wa.me/5511982139222?text=Produto%2008", buy: "#" },
-    p9: { badge: "Linha OLLED", title: "Máquina de cortao cabelo dragão", desc: "Iluminação consistente e acabamento premium para elevar o padrão do ambiente.", img: "./assets/prod-09.jpg", specs: ["Info", "Info"], features: ["Característica 1", "Característica 2"], whatsapp: "https://wa.me/5511982139222?text=Produto%2009", buy: "#" },
-    p10:{ badge: "Linha OLLED", title: "Interruptor Inteligente Controle", desc: "Potência, economia e confiabilidade no mesmo produto — feito para durar.", img: "./assets/prod-10.jpg", specs: ["Info", "Info"], features: ["Característica 1", "Característica 2"], whatsapp: "https://wa.me/5511982139222?text=Produto%2010", buy: "#" }
-  };
+  p3: {
+    badge: "Linha OLLED",
+    title: "Placa De Reposição 200w Bivolt",
+    desc: "Luz uniforme e acabamento clean para projetos que pedem visual premium.",
+    img: "./assets/Placas.png",
+    specs: ["LED", "Alta durabilidade"],
+    features: [
+      "LED de alta eficiência para reposição rápida e iluminação uniforme.",
+      "Compatível com luminárias de posto 200W bivolt, garantindo desempenho confiável e economia."
+    ],
+    whatsapp: "https://wa.me/5511982139222?text=Olá!%20Quero%20detalhes%20do%20Produto%2003.",
+    buy: "#",
+    markets: {
+      mercadolivre: "https://www.mercadolivre.com.br/luminaria-led-posto-gasolina-placa-reposicao-180-wts/up/MLBU1408745901",
+      shopee: "https://shopee.com.br/seu-link-aqui",
+      magalu: "https://www.magazineluiza.com.br/seu-link-aqui",
+      tiktok: "https://www.tiktok.com/@seu-perfil"
+    }
+  },
 
+  p4: {
+    badge: "Linha OLLED",
+    title: "Lanterna Solar Emergência",
+    desc: "Compacto e potente: iluminação prática para o dia a dia com ótimo alcance.",
+    img: "./assets/lanterna.png",
+    specs: ["Recarregável", "Resistente"],
+    features: [
+      "Iluminação LED potente com alcance ideal para trilhas e camping.",
+      "Design resistente e portátil para uso em qualquer situação."
+    ],
+    whatsapp: "https://wa.me/5511982139222?text=Olá!%20Quero%20detalhes%20do%20Produto%2004.",
+    buy: "#",
+    markets: {
+      mercadolivre: "https://www.mercadolivre.com.br/luminaria-led-posto-gasolina-placa-reposicao-180-wts/up/MLBU1408745901",
+      shopee: "https://shopee.com.br/seu-link-aqui",
+      magalu: "https://www.magazineluiza.com.br/seu-link-aqui",
+      tiktok: "https://www.tiktok.com/@seu-perfil"
+    }
+  },
+
+  p5: {
+    badge: "Linha OLLED",
+    title: "Cadeado De 20mm",
+    desc: "Segurança e resistência: construção robusta com padrão de qualidade OLLED.",
+    img: "./assets/Cadeados.png",
+    specs: ["Segurança", "Aço"],
+    features: [
+      "Estrutura compacta com corpo resistente para segurança diária.",
+      "Ideal para mochilas, armários, malas e pequenos portões."
+    ],
+    whatsapp: "https://wa.me/5511982139222?text=Olá!%20Quero%20detalhes%20do%20Produto%2005.",
+    buy: "#",
+    markets: {
+      mercadolivre: "https://www.mercadolivre.com.br/cartela-de-cadeado-20mm-12un-para-malas-bolsas-oferta/up/MLBU1412732924",
+      shopee: "https://shopee.com.br/product/228298477/18898781877/",
+      magalu: "https://www.magazineluiza.com.br/seu-link-aqui",
+      tiktok: "https://www.tiktok.com/@seu-perfil"
+    }
+  },
+
+  p6: {
+    badge: "Linha OLLED",
+    title: "Cadeado De 30mm",
+    desc: "Mais proteção no uso diário, com design compacto e durabilidade superior.",
+    img: "./assets/cadeado.png",
+    specs: ["Compacto", "Resistente"],
+    features: [
+      "Corpo reforçado com maior resistência contra arrombamentos.",
+      "Perfeito para portões, correntes, armários e aplicações externas."
+    ],
+    whatsapp: "https://wa.me/5511982139222?text=Olá!%20Quero%20detalhes%20do%20Produto%2006.",
+    buy: "#",
+    markets: {
+      mercadolivre: "https://www.mercadolivre.com.br/kit-12-cadeados-lt-30mm-resistente-com-chave-reforcado/up/MLBU1976400923",
+      shopee: "https://shopee.com.br/seu-link-aqui",
+      magalu: "https://www.magazineluiza.com.br/seu-link-aqui",
+      tiktok: "https://www.tiktok.com/@seu-perfil"
+    }
+  },
+
+  p7: {
+    badge: "Linha OLLED",
+    title: "Refletor 200w Testeira",
+    desc: "Design moderno + eficiência: feito para ambientes comerciais e profissionais.",
+    // ⚠️ Se você renomeou a imagem para sem espaços (recomendado), atualize aqui também:
+    // img: "./assets/refletor-200w.png",
+    img: "./assets/Refletor de 200w.png",
+    specs: ["200W", "Bivolt"],
+    features: [
+      "Alta potência de iluminação para áreas externas e industriais.",
+      "Sistema bivolt com baixo consumo e longa durabilidade."
+    ],
+    whatsapp: "https://wa.me/5511982139222?text=Olá!%20Quero%20detalhes%20do%20Produto%2007.",
+    buy: "#",
+    markets: {
+      mercadolivre: "https://www.mercadolivre.com.br/seu-link-aqui",
+      shopee: "https://shopee.com.br/seu-link-aqui",
+      magalu: "https://www.magazineluiza.com.br/seu-link-aqui",
+      tiktok: "https://www.tiktok.com/@seu-perfil"
+    }
+  },
+
+  p8: {
+    badge: "Linha OLLED",
+    title: "Massageador Tubarão Relaxante",
+    desc: "Relaxamento poderoso com design moderno — alívio muscular rápido para seu dia a dia.",
+    img: "./assets/Massageador.png",
+    specs: ["Bivolt", "Ergonômico"],
+    features: [
+      "Vibração potente que ajuda a aliviar tensões musculares.",
+      "Design ergonômico para uso confortável em diversas regiões do corpo."
+    ],
+    whatsapp: "https://wa.me/5511982139222?text=Olá!%20Quero%20detalhes%20do%20Produto%2008.",
+    buy: "#",
+    markets: {
+      mercadolivre: "https://www.mercadolivre.com.br/massageador-ydh-pessoal-0732-infravermelho-tubarao/up/MLBU2375298930",
+      shopee: "https://shopee.com.br/product/228298477/22193494975/",
+      magalu: "https://www.magazineluiza.com.br/seu-link-aqui",
+      tiktok: "https://www.tiktok.com/@seu-perfil"
+    }
+  },
+
+  p9: {
+    badge: "Linha OLLED",
+    title: "Máquina de Cortar Cabelo Dragão",
+    desc: "Potência, precisão e estilo em um só equipamento — ideal para cortes profissionais ou uso em casa.",
+    img: "./assets/Dragão.png",
+    specs: ["Potente", "Precisão"],
+    features: [
+      "Motor potente para cortes rápidos e precisos.",
+      "Lâminas afiadas de alta durabilidade para acabamento profissional."
+    ],
+    whatsapp: "https://wa.me/5511982139222?text=Olá!%20Quero%20detalhes%20do%20Produto%2009.",
+    buy: "#",
+    markets: {
+      mercadolivre: "https://www.mercadolivre.com.br/maquina-corta-cabelo-barba-recarregavel-varios-pentes-dragao/up/MLBU3318196956",
+      shopee: "https://shopee.com.br/product/228298477/22098773464/",
+      magalu: "https://www.magazineluiza.com.br/seu-link-aqui",
+      tiktok: "https://www.tiktok.com/@seu-perfil"
+    }
+  },
+
+  p10: {
+    badge: "Linha OLLED",
+    title: "Interruptor com Controle",
+    desc: "Controle sua iluminação à distância com praticidade e segurança — tecnologia moderna para deixar sua casa mais inteligente.",
+    img: "./assets/Interruptor.png",
+    specs: ["Controle remoto", "Instalação simples"],
+    features: [
+      "Controle remoto que permite ligar e desligar a iluminação à distância.",
+      "Instalação simples e compatível com diversos tipos de lâmpadas."
+    ],
+    whatsapp: "https://wa.me/5511982139222?text=Olá!%20Quero%20detalhes%20do%20Produto%2010.",
+    buy: "#",
+    markets: {
+      mercadolivre: "https://www.mercadolivre.com.br/interruptor-4-vias-controle-remoto-sem-fio-para-4-lampadas/up/MLBU3634101737",
+      shopee: "https://shopee.com.br/product/228298477/19197159566/",
+      magalu: "https://www.magazineluiza.com.br/seu-link-aqui",
+      tiktok: "https://www.tiktok.com/@seu-perfil"
+    }
+  }
+};
   function openProductModal(id, triggerEl) {
     const p = PRODUCTS[id];
     if (!p) return;
