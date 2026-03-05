@@ -21,32 +21,38 @@
   <header class="header">
     <div class="container nav">
       <a class="brand" href="#top" aria-label="OLLED">
+
         <img class="logo" src="./assets/Olled logo.png" alt="OLLED Logo">
       </a>
 
       <nav class="navLinks" aria-label="Navegação">
-        <a href="./produtos.html">Produtos</a>
-        <a href="./sobre.html">Sobre</a>
-        <span id="seasonalMenuSlot"></span>
-        <a class="ctaNav" href="#contato">Contato</a>
-      </nav>
+  <a href="./produtos.html">Produtos</a>
+  <a href="./sobre.html">Sobre</a>
+
+  <span id="seasonalMenuSlot"></span>
+
+  <a class="ctaNav" href="#contato">Contato</a>
+</nav>
 
       <button class="menuBtn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
     </div>
 
-    <div class="container mobileNav" id="mobileNav" hidden>
-      <a href="./produtos.html">Produtos</a>
-      <a href="./sobre.html">Sobre</a>
-      <a href="#contato">Contato</a>
-    </div>
+<div class="container mobileNav" id="mobileNav" hidden>
+  <a href="./produtos.html">Produtos</a>
+  <a href="./sobre.html">Sobre</a>
+
+  <span id="seasonalMenuSlotMobile"></span>
+
+  <a href="#contato">Contato</a>
+</div>
   </header>
 
-  <main id="top">
+  <div id="seasonalCampaignSlot"></div>
     <!-- HERO (claro) -->
     <section class="hero">
       <div class="container heroGrid">
         <div class="heroTopLogo fade-left">
-          <img src="./assets/Olled logo.png" alt="OLLED">
+        <img src="./assets/olled logo.png" alt="OLLED Logo">
         </div>
 
         <div class="heroText reveal">
@@ -78,8 +84,6 @@
     <section class="section products" id="produtos">
       <div class="container">
         <div class="dots"><span></span><span></span><span></span><span></span></div>
-
-        <div id="seasonalCampaignSlot"></div>
 
         <h2>Nossa Coleção</h2>
         <p>Produtos cuidadosamente selecionados para atender seus desejos e necessidades. Qualidade premium em cada detalhe.</p>
@@ -170,12 +174,38 @@
   <div class="container">
 
     <!-- NOVO TOPO BONITO -->
-    <div class="videoHead reveal">
-      <div class="videoFilters reveal">
-  <button class="videoFilterBtn active" data-filter="all" type="button">Todos</button>
-  <button class="videoFilterBtn" data-filter="postos" type="button">Postos</button>
-  <button class="videoFilterBtn" data-filter="galpoes" type="button">Galpões</button>
-  <button class="videoFilterBtn" data-filter="igrejas" type="button">Igrejas</button>
+   <div class="videoFilters reveal">
+
+<button class="videoFilterBtn active" data-filter="all" type="button">
+Todos
+</button>
+
+<button class="videoFilterBtn" data-filter="luminarias" type="button">
+Luminárias
+</button>
+
+<button class="videoFilterBtn" data-filter="seguranca" type="button">
+Segurança
+</button>
+
+<button class="videoFilterBtn" data-filter="casa" type="button">
+Para sua casa
+</button>
+
+<button class="videoFilterBtn" data-filter="camping" type="button">
+Camping 
+</button>
+
+<button class="videoFilterBtn" data-filter="solar" type="button">
+Linha Solar
+</button>
+<button id="seasonalVideoCategoryBtn"
+        class="videoFilterBtn"
+        data-filter="comemorativas"
+        type="button"
+        style="display:none;">
+  Datas comemorativas
+</button>
 </div>
 
       <div>
@@ -200,36 +230,38 @@
   <button class="railBtn prev" type="button" aria-label="Voltar">‹</button>
 
   <div class="railViewport">
-    <div class="railTrack">
-     <article class="railCard reveal" data-video="./assets/video-olled.mp4">
-  <img class="railThumb" src="./assets/Cadeados.png" alt="Vídeo OLLED">
-        <div class="railOverlay">
-          <div class="playBadge">▶</div>
-          <div class="playText">Assistir</div>
-        </div>
-      </article>
-
-    <article class="railCard reveal" data-video="./assets/video lanterna.mp4">
-  <img class="railThumb" src="./assets/Lanterna-militar .png" alt="Vídeo lanterna" loading="lazy">
-  <div class="railOverlay">
-    <div class="playBadge">▶</div>
-    <div class="playText">Assistir</div>
-  </div>
-</article>
-
-     <article class="railCard reveal" data-video="./assets/Cadeado 20mm.mp4">
- <img class="railThumb" src="./assets/cadeado.png" alt="Cadeado 20mm">
-        <div class="railOverlay">
-          <div class="playBadge">▶</div>
-          <div class="playText">Assistir</div>
-        </div>
-      </article>
+  <div class="railTrack">
+  <article class="railCard reveal" data-video="./assets/video-olled.mp4" data-cat="luminarias">
+    <img class="railThumb" src="./assets/Cadeados.png" alt="Vídeo OLLED">
+    <div class="railOverlay">
+      <div class="playBadge">▶</div>
+      <div class="playText">Assistir</div>
     </div>
-  </div>
+  </article>
+
+  <article class="railCard reveal" data-video="./assets/video lanterna.mp4" data-cat="camping">
+    <img class="railThumb" src="./assets/Lanterna-militar .png" alt="Vídeo lanterna" loading="lazy">
+    <div class="railOverlay">
+      <div class="playBadge">▶</div>
+      <div class="playText">Assistir</div>
+    </div>
+  </article>
+
+  <article class="railCard reveal" data-video="./assets/Cadeado 20mm.mp4" data-cat="seguranca">
+    <img class="railThumb" src="./assets/cadeado.png" alt="Cadeado 20mm">
+    <div class="railOverlay">
+      <div class="playBadge">▶</div>
+      <div class="playText">Assistir</div>
+    </div>
+  </article>
+</div>
 
   <button class="railBtn next" type="button" aria-label="Avançar">›</button>
 </div>
-
+    </div> <!-- fecha .container do #videos -->
+  </section> <!-- fecha section#videos -->
+  </div> <!-- fecha .videoBox -->
+</div> <!-- fecha .videoWrap -->
 <!-- MARKETPLACES -->
 <section id="marketplaces" class="section">
   <div class="container">
@@ -504,7 +536,7 @@
   </div>
 </section>
   <footer class="footer">
-    <div class="container footerGrid">
+    <div class="footerGrid">
       <div class="footerBrand">
         <img class="logo" src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663096299728/YKeuuQJrWALnEjJI.png" alt="OLLED Logo">
         <p>Produtos premium para seu estilo de vida.</p>
@@ -524,7 +556,7 @@
       </div>
     </div>
 
-    <div class="container footerBottom">
+    <div class="footerBottom">
       <span>Direitos autorais © 2026 OLLED. Todos os direitos reservados.</span>
       <span>Feito com 💚 por OLLED</span>
     </div>
@@ -622,6 +654,8 @@
   </div>
 
 </div>
+
+<button id="backToTop" aria-label="Voltar ao topo">↑</button>
 
 </body>
 </html>

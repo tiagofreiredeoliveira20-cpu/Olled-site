@@ -3373,3 +3373,310 @@ p, .lead{
   transform: translateY(-1px);
   transition: .2s ease;
 }
+/* ===== Carrossel de Campanhas (Banner) ===== */
+.seasonalCarousel{
+  position: relative;
+  margin: 18px 0 24px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.seasonalViewport{
+  overflow: hidden;
+  outline: none;
+}
+
+.seasonalTrack{
+  display: flex;
+  width: 100%;
+  transform: translateX(0%);
+  transition: transform .45s ease;
+}
+
+.seasonalSlide{
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px 18px;
+  text-decoration: none;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.16);
+  backdrop-filter: blur(10px);
+}
+
+.seasonalSlide__title{
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.seasonalSlide__cta{
+  font-weight: 800;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #fff;
+  white-space: nowrap;
+}
+
+.seasonalNav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(0,0,0,0.25);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.seasonalNav.prev{ left: 10px; }
+.seasonalNav.next{ right: 10px; }
+
+.seasonalDots{
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.seasonalDot{
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.25);
+}
+
+.seasonalDot.active{
+  background: rgba(255,255,255,0.85);
+}
+
+/* Mobile: reduz padding */
+@media (max-width: 600px){
+  .seasonalSlide{ padding: 14px 14px; }
+  .seasonalSlide__title{ font-size: 16px; }
+  .seasonalNav{ display:none; } /* no mobile vai por swipe/auto */
+}
+/* ===== Carrossel de Campanhas com Imagem ===== */
+.seasonalCarousel{
+  position: relative;
+  margin: 18px 0 24px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.seasonalViewport{ overflow: hidden; outline: none; }
+
+.seasonalTrack{
+  display: flex;
+  width: 100%;
+  transform: translateX(0%);
+  transition: transform .45s ease;
+}
+
+.seasonalSlide{
+  min-width: 100%;
+  position: relative;
+  display: block;
+  height: 420px;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.seasonalSlide__img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.seasonalSlide__overlay{
+  background: linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,.05));
+}
+
+.seasonalSlide__content{
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.seasonalSlide__title{
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  color: #fff;
+  max-width: 760px;
+}
+
+.seasonalSlide__cta{
+  width: fit-content;
+  font-weight: 800;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.22);
+  color: #fff;
+}
+
+.seasonalNav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(0,0,0,0.30);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.seasonalNav.prev{ left: 10px; }
+.seasonalNav.next{ right: 10px; }
+
+.seasonalDots{
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.seasonalDot{
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.25);
+}
+.seasonalDot.active{ background: rgba(255,255,255,0.85); }
+
+@media (max-width: 600px){
+  .seasonalSlide{ height: 180px; }
+  .seasonalSlide__title{ font-size: 18px; }
+  .seasonalNav{ display:none; }
+}
+/* ===== Banner FULL-WIDTH (de ponta a ponta) ===== */
+.seasonalCarousel{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);   /* sai do container e ocupa a tela toda */
+  margin-right: calc(50% - 50vw);
+  border-radius: 0;               /* liso, sem borda arredondada */
+  overflow: hidden;
+}
+
+.seasonalSlide{
+  height: 520px;                  /* mais alto no desktop */
+  border-radius: 0;               /* liso */
+}
+
+/* mobile */
+@media (max-width: 600px){
+  .seasonalSlide{ height: 300px; }
+}
+/* Link especial no menu */
+.seasonalNavLink{
+  font-weight: 700;
+  color: #e91e63;
+  position: relative;
+  transition: all .25s ease;
+}
+
+.seasonalNavLink:hover{
+  color: #ff4081;
+}
+
+.seasonalNavLink::after{
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #e91e63;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+}
+
+.seasonalNavLink:hover::after{
+  transform: scaleX(1);
+}
+/* BOTÃO VOLTAR AO TOPO */
+#backToTop{
+  position:fixed;
+  bottom:100px;   /* sobe o botão acima do WhatsApp */
+  right:30px;
+  width:48px;
+  height:48px;
+  border:none;
+  border-radius:50%;
+  background:#8bd430;
+  color:#fff;
+  font-size:22px;
+  cursor:pointer;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 6px 18px rgba(0,0,0,0.15);
+  z-index:999;
+  transition:all .25s ease;
+}
+
+#backToTop:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 22px rgba(0,0,0,0.25);
+}
+/* ===== FOOTER FORÇADO FULL-WIDTH (mesmo dentro de container) ===== */
+.footer{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background:#111;
+  color:#fff;
+}
+
+/* opcional: dá respiro lateral pro conteúdo do rodapé */
+.footer .footerGrid,
+.footer .footerBottom{
+  padding-left: 22px;
+  padding-right: 22px;
+}
+.isHidden{
+  display:none !important;
+}
+/* ESconde cards quando filtra */
+.isHidden{
+  display:none !important;
+}
+/* ===== Transição premium na troca de categoria (vídeos) ===== */
+.railCard{
+  transition: opacity .22s ease, transform .22s ease;
+  will-change: opacity, transform;
+}
+
+.railCard.isFadingOut{
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.railCard.isFadingIn{
+  opacity: 0;
+  transform: translateY(6px);
+}

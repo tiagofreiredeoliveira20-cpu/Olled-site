@@ -195,26 +195,47 @@ document.addEventListener("keydown", (e) => {
   }
 });
 // ===== Filtro de categorias dos vídeos =====
-const filterBtns = document.querySelectorAll(".videoFilterBtn");
-const videoCards = document.querySelectorAll(".railCard[data-cat]");
+// ===== CATEGORIA SAZONAL DE VÍDEOS (ON/OFF) =====
+const SEASONAL_VIDEOS = false; // true = aparece / false = some
 
-function setActive(btn){
-  filterBtns.forEach(b => b.classList.remove("active"));
-  btn.classList.add("active");
-}
+(function toggleSeasonalVideoCategory(){
+  const btn = document.getElementById("seasonalVideoCategoryBtn");
+  const cards = document.querySelectorAll('.railCard[data-cat="comemorativas"]');
 
-filterBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const filter = btn.getAttribute("data-filter");
-    setActive(btn);
+  // some/mostra o botão da categoria
+  if (btn) btn.style.display = SEASONAL_VIDEOS ? "" : "none";
 
-    videoCards.forEach(card => {
-      const cat = card.getAttribute("data-cat");
-      const show = (filter === "all") || (cat === filter);
-      card.classList.toggle("isHidden", !show);
+  // some/mostra os vídeos da categoria
+  cards.forEach(card => {
+    card.classList.toggle("isHidden", !SEASONAL_VIDEOS);
+  });
+})();
+// ===============================
+// FILTRO DE CATEGORIAS (VÍDEOS)
+// ===============================
+(function videoCategories() {
+  const filterBtns = document.querySelectorAll(".videoFilterBtn");
+  const videoCards = document.querySelectorAll(".railCard[data-video]");
+  if (!filterBtns.length || !videoCards.length) return;
+
+  function setActive(btn) {
+    filterBtns.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+  }
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = (btn.getAttribute("data-filter") || "all").toLowerCase().trim();
+      setActive(btn);
+
+      videoCards.forEach((card) => {
+        const cat = (card.getAttribute("data-cat") || "institucional").toLowerCase().trim();
+        const show = filter === "all" || cat === filter;
+        card.classList.toggle("isHidden", !show);
+      });
     });
   });
-});
+})();
 
 // ===== Feedback Slider (autoplay premium) =====
 (() => {
@@ -238,8 +259,8 @@ filterBtns.forEach(btn => {
     viewport.scrollBy({ left: getStep() * dir, behavior: "smooth" });
   };
 
-  prev.addEventListener("click", () => scrollByStep(-1));
-  next.addEventListener("click", () => scrollByStep(1));
+  prev?.addEventListener("click", () => scrollByStep(-1));
+next?.addEventListener("click", () => scrollByStep(1));
 
   // Loop suave: se chegar no fim, volta pro começo
   const loopCheck = () => {
@@ -514,29 +535,26 @@ if (videoWrapEl) videoWrapEl.style.display = "none";
 // CAMPANHAS SAZONAIS (Plano A)
 // ===============================
 (function seasonalCampaigns() {
-  // Ajuste para horário do Brasil (evita virar dia errado em alguns PCs)
   function nowBR() {
-    const now = new Date();
-    // Força referência em pt-BR (uso de data local do dispositivo)
-    return now;
+    return new Date();
   }
 
-  // Crie suas campanhas aqui
   const CAMPAIGNS = [
     {
       key: "maes",
       title: "Especial Dia das Mães",
       url: "./Campanhas/dia-das-maes.html",
-      // Janela em que fica visível (inclusive)
-      start: "2026-03-01",
-      end:   "2026-05-12",
+      img: "./Campanhas/Imagens/banner dia das maes site.png",
+      start: "2026-05-01",
+      end: "2026-05-12",
     },
     {
       key: "pais",
       title: "Especial Dia dos Pais",
-      url: "./campanhas/dia-dos-pais.html",
+      url: "./Campanhas/dia-dos-pais.html",
+      img: "./assets/banners/banner-pais.jpg",
       start: "2026-08-01",
-      end:   "2026-08-11",
+      end: "2026-08-11",
     },
   ];
 
@@ -549,41 +567,168 @@ if (videoWrapEl) videoWrapEl.style.display = "none";
     const today = nowBR();
     const start = parseYMD(c.start);
     const end = parseYMD(c.end);
-    // inclui o dia final
     end.setHours(23, 59, 59, 999);
     return today >= start && today <= end;
   }
 
   function ensureContainer() {
-    // Container opcional na HOME: <div id="seasonalCampaignSlot"></div>
     return document.getElementById("seasonalCampaignSlot");
   }
 
-  function injectHomeBanner(campaign) {
+  function injectHomeCarousel(campaigns) {
     const slot = ensureContainer();
     if (!slot) return;
 
+    const slides = campaigns
+      .map(
+        (c) => `
+        <a class="seasonalSlide" href="${c.url}" aria-label="${c.title}">
+          <img class="seasonalSlide__img" src="${c.img}" alt="${c.title}" loading="lazy">
+        </a>
+      `
+      )
+      .join("");
+
     slot.innerHTML = `
-      <a class="seasonalBanner reveal" href="${campaign.url}" aria-label="${campaign.title}">
-        <div class="seasonalBanner__title">${campaign.title}</div>
-        <div class="seasonalBanner__cta">Ver ofertas →</div>
-      </a>
+      <div class="seasonalCarousel" aria-label="Campanhas sazonais">
+        <div class="seasonalViewport">
+          <div class="seasonalTrack">
+            ${slides}
+          </div>
+        </div>
+      </div>
     `;
-  }
+
+    const track = slot.querySelector(".seasonalTrack");
+    const items = Array.from(slot.querySelectorAll(".seasonalSlide"));
+    if (items.length <= 1) return;
+
+    let index = 0;
+    const setIndex = (i) => {
+      index = (i + items.length) % items.length;
+      track.style.transform = `translateX(${-index * 100}%)`;
+    };
+
+    let timer = setInterval(() => setIndex(index + 1), 5000);
+
+    slot.addEventListener("mouseenter", () => {
+      clearInterval(timer);
+      timer = null;
+    });
+
+    slot.addEventListener("mouseleave", () => {
+      if (!timer) timer = setInterval(() => setIndex(index + 1), 5000);
+    });
+
+    setIndex(0);
+  } // ✅ FECHA A FUNÇÃO AQUI (isso estava faltando no seu)
 
   function injectMenuLink(campaign) {
-    // No menu, adicione um <li id="seasonalMenuSlot"></li> onde você quer o link
-    const slot = document.getElementById("seasonalMenuSlot");
-    if (!slot) return;
+    const slotDesktop = document.getElementById("seasonalMenuSlot");
+    const slotMobile = document.getElementById("seasonalMenuSlotMobile");
 
-    slot.innerHTML = `<a href="${campaign.url}">${campaign.title}</a>`;
+    const html = `
+      <a class="seasonalNavLink" href="${campaign.url}">
+        🎁 Especial Dia das Mães
+      </a>
+    `;
+
+    if (slotDesktop) slotDesktop.innerHTML = html;
+    if (slotMobile) slotMobile.innerHTML = html;
   }
 
-  // Encontra a primeira campanha ativa (prioridade pela ordem do array)
-  const active = CAMPAIGNS.find(isActive);
-  if (!active) return;
+  const PREVIEW = false; // deixe true só pra testar
 
-  // Ativa onde você quiser (home/menu)
-  injectHomeBanner(active);
-  injectMenuLink(active);
+  const actives = PREVIEW ? CAMPAIGNS : CAMPAIGNS.filter(isActive);
+  if (!actives.length) return;
+
+  // ✅ Menu primeiro
+  injectMenuLink(actives[0]);
+  // ✅ Banner depois
+  injectHomeCarousel(actives);
 })();
+// BOTÃO VOLTAR AO TOPO
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  if(window.scrollY > 300){
+    backToTop.style.display = "flex";
+  } else{
+    backToTop.style.display = "none";
+  }
+});
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+});
+// ===============================
+// FILTRO DE CATEGORIAS DOS VÍDEOS
+// ===============================
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".videoFilterBtn");
+  const videos = document.querySelectorAll("#videoRail .railCard");
+
+  console.log("Filtro vídeos:", { buttons: buttons.length, videos: videos.length });
+
+  if (!buttons.length || !videos.length) return;
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = (button.getAttribute("data-filter") || "all").trim().toLowerCase();
+
+      // ativa botão
+      buttons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      // animação: fade out
+videos.forEach(video => video.classList.add("isFadingOut"));
+
+setTimeout(() => {
+
+  videos.forEach(video => {
+    const cat = (video.getAttribute("data-cat") || "").trim().toLowerCase();
+    const show = filter === "all" || cat === filter;
+
+    video.classList.toggle("isHidden", !show);
+  });
+
+  const visible = Array.from(videos).filter(v => !v.classList.contains("isHidden"));
+
+  visible.forEach(v => {
+    v.classList.remove("isFadingOut");
+    v.classList.add("isFadingIn");
+  });
+
+  requestAnimationFrame(() => {
+    visible.forEach(v => {
+      v.classList.remove("isFadingIn");
+    });
+  });
+
+},160);
+    });
+  });
+});
+// ===============================
+// BOTÃO VOLTAR AO TOPO (FIX)
+// ===============================
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTop = document.getElementById("backToTop");
+  if (!backToTop) return;
+
+  // mostrar/esconder
+  const toggleBackToTop = () => {
+    backToTop.style.display = (window.scrollY > 300) ? "flex" : "none";
+  };
+
+  window.addEventListener("scroll", toggleBackToTop);
+  toggleBackToTop();
+
+  // clique
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
