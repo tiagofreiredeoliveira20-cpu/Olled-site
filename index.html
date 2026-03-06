@@ -2,6 +2,12 @@
 <html lang="pt-br">
 <head>
   <link rel="icon" type="image/png" href="./assets/favicon.png">
+
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0b0f14">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="OLLED">
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OLLED • Portfólio</title>
@@ -706,6 +712,20 @@
 </style>
 
 <script src="./script.js" defer></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(function(registration) {
+        console.log('Service Worker registrado:', registration.scope);
+      })
+      .catch(function(error) {
+        console.log('Erro ao registrar Service Worker:', error);
+      });
+  });
+}
+</script>
 
   <div class="videoModal" id="videoModal">
 
