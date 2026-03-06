@@ -18,25 +18,35 @@
 
 <body>
   <!-- NAV -->
-  <header class="header">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="OLLED">
+<header class="header">
+  <div class="topbar-pill topbar-header">
+  <span class="topbar-badge">OLLED</span>
 
-        <img class="logo" src="./assets/Olled logo.png" alt="OLLED logo">
-      </a>
+  <div class="topbar-rotator" id="topbarRotator">
+    <span class="topbar-dot" id="topbarDot"></span>
 
-      <nav class="navLinks" aria-label="Navegação">
-  <a href="./produtos.html">Produtos</a>
-  <a href="./sobre.html">Sobre</a>
+    <span class="topbar-message active" data-color="#7c3aed">Cupons e ofertas especiais</span>
+    <span class="topbar-message" data-color="#22c55e">Frete rápido para todo Brasil</span>
+    <span class="topbar-message" data-color="#0ea5e9">Produtos testados e aprovados</span>
+    <span class="topbar-message" data-color="#f97316">Compra segura nos marketplaces</span>
+    <span class="topbar-message" data-color="#e11d48">Novidades toda semana</span>
+  </div>
+</div>
 
-  <span id="seasonalMenuSlot"></span>
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="OLLED">
+      <img class="logo" src="./assets/Olled logo.png" alt="OLLED logo">
+    </a>
 
-  <a class="ctaNav" href="#contato">Contato</a>
-</nav>
+    <nav class="navLinks" aria-label="Navegação">
+      <a href="./produtos.html">Produtos</a>
+      <a href="./sobre.html">Sobre</a>
+      <span id="seasonalMenuSlot"></span>
+      <a class="ctaNav" href="#contato">Contato</a>
+    </nav>
 
-      <button class="menuBtn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
-    </div>
-
+    <button class="menuBtn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+  </div>
 <div class="container mobileNav" id="mobileNav" hidden>
   <a href="./produtos.html">Produtos</a>
   <a href="./sobre.html">Sobre</a>

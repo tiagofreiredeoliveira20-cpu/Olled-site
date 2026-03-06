@@ -60,10 +60,10 @@ img{max-width:100%; display:block}
 
 .navLinks{
   display:flex;
-  gap:40px; /* aumenta o espaço entre Produtos e Sobre */
+  gap:20px;
   align-items:center;
+  margin-left:auto;
 }
-
 
 .brand{
   display:flex;
@@ -82,9 +82,8 @@ img{max-width:100%; display:block}
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:px 0; /* mais espaço vertical */
+  padding:14px 0;
 }
-
 .navLinks a{
   color:#111827;
   font-weight:500;
@@ -3679,4 +3678,780 @@ p, .lead{
 .railCard.isFadingIn{
   opacity: 0;
   transform: translateY(6px);
+}
+/* TOPBAR ESTILO MARKETPLACE */
+.topbar-wrap{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  padding:10px 16px 0;
+  background:transparent;
+}
+
+.topbar-pill{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  background:#fff159;
+  color:#1f2937;
+  border-radius:999px;
+  padding:10px 18px;
+  min-height:44px;
+  box-shadow:0 8px 18px rgba(0,0,0,.08);
+  border:1px solid rgba(0,0,0,.06);
+}
+
+.topbar-badge{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: inherit;
+  color: #fff;
+  font-weight: 800;
+  font-size: 12px;
+  border-radius: 999px;
+  padding: 5px 10px;
+  line-height: 1;
+  white-space: nowrap;
+  flex: 0 0 auto;
+  transition: background-color .45s ease, color .45s ease;
+}
+
+.topbar-rotator{
+  position:relative;
+  height:20px;
+  min-width:260px;
+  overflow:hidden;
+}
+
+.topbar-message{
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  opacity:0;
+  transform:translateY(10px);
+  transition:opacity .35s ease, transform .35s ease;
+  font-weight:800;
+  font-size:14px;
+  white-space:nowrap;
+}
+
+.topbar-message.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media (max-width: 768px){
+  .topbar-wrap{
+    padding:8px 12px 0;
+  }
+
+  .topbar-pill{
+    width:100%;
+    max-width:100%;
+    gap:10px;
+    padding:10px 14px;
+  }
+
+  .topbar-badge{
+    font-size:12px;
+    padding:6px 10px;
+  }
+
+  .topbar-rotator{
+    min-width:0;
+    flex:1;
+  }
+
+  .topbar-message{
+    font-size:13px;
+  }
+}
+/* TOPBAR DENTRO DO HEADER, CANTO SUPERIOR DIREITO */
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.topbar-header{
+position:absolute;
+top:8px;
+left:22px;
+}
+
+.topbar-pill{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff159;
+  color: #111827;
+  border-radius: 999px;
+  padding: 6px 12px;
+  min-height: 34px;
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+}
+
+.topbar-badge{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: inherit;
+  color: #fff;
+  font-weight: 800;
+  font-size: 12px;
+  border-radius: 999px;
+  padding: 5px 10px;
+  line-height: 1;
+  white-space: nowrap;
+  flex: 0 0 auto;
+  transition: background-color .45s ease, color .45s ease;
+}
+
+.topbar-rotator{
+  position: relative;
+  width: 250px;
+  height: 18px;
+  overflow: hidden;
+}
+
+.topbar-message{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .35s ease, transform .35s ease;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.topbar-message.active{
+  opacity: 1;
+  transform: translateY(0);
+}
+.topbar-header{
+  position: absolute;
+  top: 8px;
+  right: 22px;
+  z-index: 60;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  width: auto;
+  max-width: 380px;
+  min-width: 0;
+  padding: 6px 12px;
+
+  background: #fff159;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+
+  overflow: hidden;
+}
+
+.topbar-badge{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: inherit;
+  color: #fff;
+  font-weight: 800;
+  font-size: 12px;
+  border-radius: 999px;
+  padding: 5px 10px;
+  line-height: 1;
+  white-space: nowrap;
+  flex: 0 0 auto;
+  transition: background-color .45s ease, color .45s ease;
+}
+
+.topbar-rotator{
+  position: relative;
+  width: 240px;
+  height: 20px;
+  overflow: hidden;
+  flex: 0 0 240px;
+  border-radius: 999px;
+}
+
+.topbar-bubble{
+  position: absolute;
+  left: -32px;
+  top: 50%;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: #7c3aed;
+  transform: translateY(-50%) scale(0);
+  z-index: 1;
+  opacity: 0;
+}
+
+.topbar-message{
+  position: absolute;
+  left: 12px;
+  top: 0;
+  width: calc(100% - 24px);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .28s ease, transform .28s ease;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+  z-index: 2;
+  color: #111827;
+}
+
+.topbar-message.active{
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ===== TOPBAR HEADER PREMIUM ESTÁVEL ===== */
+.topbar-header{
+position:absolute;
+top:8px;
+left:22px;
+
+display:inline-flex;
+align-items:center;
+gap:10px;
+
+padding:6px 14px;
+
+border-radius:999px;
+
+background:rgba(255,255,255,0.65);
+backdrop-filter:blur(8px);
+
+border:1px solid rgba(0,0,0,.08);
+
+box-shadow:0 6px 16px rgba(0,0,0,.08);
+
+transition:background-color .6s ease, box-shadow .4s ease;
+}
+
+.topbar-badge{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+background:linear-gradient(135deg,#7c3aed,#a855f7);
+
+color:#fff;
+font-weight:800;
+font-size:12px;
+
+border-radius:999px;
+padding:5px 10px;
+
+letter-spacing:.5px;
+}
+
+.topbar-rotator{
+  position: relative;
+  width: 240px;
+  height: 18px;
+  overflow: hidden;
+  flex: 0 0 240px;
+}
+
+.topbar-message{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .32s ease, transform .32s ease, color .32s ease;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 800;
+  color: #111827;
+  z-index: 2;
+}
+
+.topbar-message.active{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.topbar-dot{
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: #7c3aed;
+  transform: translateY(-50%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.topbar-rotator.animating .topbar-dot{
+  animation: topbarDotPass .65s ease forwards;
+}
+
+@keyframes topbarDotPass{
+  0%{
+    left: -20px;
+    opacity: 0;
+    transform: translateY(-50%) scale(.6);
+  }
+  15%{
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+  50%{
+    left: 50%;
+    transform: translateY(-50%) scale(1.8);
+    opacity: 1;
+  }
+  100%{
+    left: calc(100% + 20px);
+    opacity: 0;
+    transform: translateY(-50%) scale(.8);
+  }
+}
+
+/* espaço no topo do header para a barra */
+.nav{
+  padding: 28px 0 10px;
+}
+
+@media (max-width: 980px){
+  .topbar-header{
+    display: none;
+  }
+}
+.topbar-header{
+transition: background-color .6s ease;
+}
+/* ===== MOBILE OTIMIZADO ===== */
+@media (max-width: 768px){
+
+  .container{
+    padding: 0 14px;
+  }
+
+  .header{
+    position: sticky;
+    top: 0;
+  }
+
+  .nav{
+    padding: 14px 0;
+  }
+
+  .logo{
+    width: 96px;
+  }
+
+  .navLinks{
+    display: none;
+  }
+
+  .menuBtn{
+    display: inline-flex;
+  }
+
+  .topbar-header{
+    display: none !important;
+  }
+}
+@media (max-width: 768px){
+
+  .hero{
+    padding: 14px 0 42px 0;
+  }
+
+  .heroGrid{
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .heroTopLogo{
+    margin-bottom: -8px;
+  }
+
+  .heroTopLogo img{
+    width: 280px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .heroText h1{
+    font-size: 34px;
+    line-height: 1.08;
+    margin: 18px 0 12px;
+    text-align: center;
+  }
+
+  .lead{
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .heroActions{
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .heroActions .btn{
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .heroMedia img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+@media (max-width: 768px){
+
+  .section{
+    padding: 52px 0;
+  }
+
+  .section h2{
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .section p{
+    font-size: 14px;
+    text-align: center;
+    margin: 0 auto 24px;
+  }
+
+  .grid{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .card{
+    border-radius: 16px;
+  }
+
+  .card img{
+    height: 220px;
+    object-fit: contain;
+    padding: 8px;
+  }
+
+  .cardBody{
+    padding: 18px 16px 16px;
+  }
+
+  .cardBody h3{
+    font-size: 22px;
+  }
+
+  .cardBody p{
+    font-size: 14px;
+    line-height: 1.55;
+    text-align: left;
+  }
+}
+@media (max-width: 768px){
+
+  .videoFilters{
+    justify-content: flex-start;
+    gap: 8px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .videoFilters::-webkit-scrollbar{
+    display: none;
+  }
+
+  .videoFilterBtn{
+    flex: 0 0 auto;
+    font-size: 13px;
+    padding: 9px 12px;
+  }
+
+  .rail{
+    margin-top: 12px;
+  }
+
+  .railBtn{
+    width: 38px;
+    height: 38px;
+    font-size: 24px;
+  }
+
+  .railCard{
+    flex: 0 0 240px;
+    height: 140px;
+  }
+
+  .playBadge{
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  .playText{
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px){
+
+  .whatsappFloat{
+    width: 56px;
+    height: 56px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .whatsappFloat img{
+    width: 28px;
+    height: 28px;
+  }
+
+  #backToTop{
+    right: 16px;
+    bottom: 84px;
+    width: 46px;
+    height: 46px;
+  }
+}
+/* ===== MOBILE HEADER + TOPBAR ===== */
+@media (max-width: 768px){
+
+  .container{
+    padding: 0 14px;
+  }
+
+  .header{
+    position: sticky;
+    top: 0;
+    z-index: 80;
+  }
+
+  .nav{
+    padding: 12px 0 !important;
+    min-height: 64px;
+  }
+
+  .logo{
+    width: 92px;
+    height: auto;
+  }
+
+  .navLinks{
+    display: none !important;
+  }
+
+  .menuBtn{
+    display: inline-flex !important;
+  }
+
+  .mobileNav{
+    padding: 10px 0 14px;
+  }
+
+  /* topbar visível no celular */
+@media (max-width: 768px){
+
+  .topbar-header{
+    position: static !important;
+    display: inline-flex !important;
+    margin: 8px auto 0;
+
+    width: auto;
+    max-width: 310px;
+
+    padding: 6px 12px;
+    border-radius: 999px;
+
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .topbar-rotator{
+    position: relative;
+    width: 210px;
+    height: 18px;
+    overflow: hidden;
+    flex: 0 0 210px;
+  }
+
+  .topbar-message{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+
+    font-size: 12px;
+    white-space: nowrap;
+
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity .3s ease, transform .3s ease;
+  }
+
+  .topbar-message.active{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+}
+@media (max-width: 768px){
+  .hero{
+    padding: 16px 0 42px 0;
+  }
+
+  .heroGrid{
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .heroTopLogo{
+    margin-top: 0;
+    margin-bottom: -6px;
+  }
+
+  .heroTopLogo img{
+    width: 260px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .heroText h1{
+    font-size: 34px;
+    line-height: 1.08;
+    margin: 18px 0 12px;
+    text-align: center;
+  }
+
+  .lead{
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .heroActions{
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .heroActions .btn{
+    width: 100%;
+    max-width: 280px;
+  }
+}
+@media (max-width: 768px){
+  .hero{
+    padding: 16px 0 42px 0;
+  }
+
+  .heroGrid{
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .heroTopLogo{
+    margin-top: 0;
+    margin-bottom: -6px;
+  }
+
+  .heroTopLogo img{
+    width: 260px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .heroText h1{
+    font-size: 34px;
+    line-height: 1.08;
+    margin: 18px 0 12px;
+    text-align: center;
+  }
+
+  .lead{
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .heroActions{
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .heroActions .btn{
+    width: 100%;
+    max-width: 280px;
+  }
+}
+@media (max-width: 768px){
+  .videoFilters{
+    justify-content: flex-start;
+    gap: 8px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .videoFilters::-webkit-scrollbar{
+    display: none;
+  }
+
+  .videoFilterBtn{
+    flex: 0 0 auto;
+    font-size: 13px;
+    padding: 9px 12px;
+  }
+
+  .railCard{
+    flex: 0 0 240px;
+    height: 140px;
+  }
+
+  .railBtn{
+    width: 38px;
+    height: 38px;
+    font-size: 24px;
+  }
+}
+@media (max-width: 768px){
+  .whatsappFloat{
+    width: 56px;
+    height: 56px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .whatsappFloat img{
+    width: 28px;
+    height: 28px;
+  }
+
+  #backToTop{
+    right: 16px;
+    bottom: 84px;
+    width: 46px;
+    height: 46px;
+  }
 }

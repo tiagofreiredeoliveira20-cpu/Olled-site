@@ -900,3 +900,52 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
+// ===== TOPBAR HEADER ROTATIVA ESTÁVEL =====
+document.addEventListener("DOMContentLoaded", () => {
+  const pill = document.querySelector(".topbar-header");
+  const badge = document.querySelector(".topbar-badge");
+  const rotator = document.getElementById("topbarRotator");
+  const dot = document.getElementById("topbarDot");
+  const messages = document.querySelectorAll(".topbar-message");
+
+  if (!pill || !badge || !rotator || !dot || !messages.length) return;
+
+  let current = 0;
+  let locked = false;
+
+  function nextMessage() {
+    if (locked) return;
+    locked = true;
+
+    const currentMsg = messages[current];
+    const nextIndex = (current + 1) % messages.length;
+    const nextMsg = messages[nextIndex];
+    const nextColor = nextMsg.dataset.color || "#7c3aed";
+
+    dot.style.background = nextColor;
+
+    rotator.classList.remove("animating");
+    void rotator.offsetWidth;
+    rotator.classList.add("animating");
+
+    setTimeout(() => {
+      // muda a cor da cápsula e do badge junto
+      pill.style.background = nextColor;
+      badge.style.background = nextColor;
+
+      currentMsg.classList.remove("active");
+      nextMsg.classList.add("active");
+
+      nextMsg.style.color = "#ffffff";
+      pill.style.color = "#ffffff";
+    }, 220);
+
+    setTimeout(() => {
+      rotator.classList.remove("animating");
+      current = nextIndex;
+      locked = false;
+    }, 1400);
+  }
+
+  setInterval(nextMessage, 2600);
+});
