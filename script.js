@@ -857,8 +857,12 @@ videos.forEach(video => video.classList.add("isFadingOut"));
 setTimeout(() => {
 
   videos.forEach(video => {
-    const cat = (video.getAttribute("data-cat") || "").trim().toLowerCase();
-    const show = filter === "all" || cat === filter;
+const cats = (video.getAttribute("data-cat") || "")
+  .toLowerCase()
+  .trim()
+  .split(/\s+/);
+
+const show = filter === "all" || cats.includes(filter);
 
     video.classList.toggle("isHidden", !show);
   });
