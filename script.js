@@ -48,13 +48,21 @@ elements.forEach((el) => io.observe(el));
   let x = 0;
 
   // quanto desliza por clique (um card + gap)
-  function stepSize() {
-    const card = rail.querySelector(".railCard");
-    if (!card) return 300;
-    const style = getComputedStyle(track);
-    const gap = parseFloat(style.gap || "14");
-    return card.getBoundingClientRect().width + gap;
-  }
+function getVisibleCards() {
+  return Array.from(rail.querySelectorAll(".railCard")).filter(
+    (card) => !card.classList.contains("isHidden")
+  );
+}
+
+function stepSize() {
+  const visibleCards = getVisibleCards();
+  const card = visibleCards[0];
+  if (!card) return 300;
+
+  const style = getComputedStyle(track);
+  const gap = parseFloat(style.gap || "14");
+  return card.getBoundingClientRect().width + gap;
+}
 
   function maxScroll() {
     return Math.max(0, track.scrollWidth - viewport.clientWidth);
