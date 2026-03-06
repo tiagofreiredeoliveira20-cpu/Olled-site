@@ -393,6 +393,7 @@ const PRODUCTS = {
   p2: {
     badge: "Iluminação",
     title: "Lanterna De Camping Solar",
+    video: "./assets/video lanterna.mp4",
     desc: "Solar forte e moderno: iluminação autônoma com economia real e instalação simples.",
     img: "./assets/LED SOLAR.png",
     specs: ["Solar", "Portátil", "Alta autonomia"],
@@ -414,6 +415,7 @@ const PRODUCTS = {
 
   p3: {
     badge: "Linha OLLED",
+    video: "./assets/video lanterna.mp4",
     title: "Placa De Reposição 200w Bivolt",
     desc: "Luz uniforme e acabamento clean para projetos que pedem visual premium.",
     img: "./assets/Placas.png",
@@ -434,6 +436,7 @@ const PRODUCTS = {
 
   p4: {
     badge: "Linha OLLED",
+    video: "./assets/video lanterna.mp4",
     title: "Lanterna Solar Emergência",
     desc: "Compacto e potente: iluminação prática para o dia a dia com ótimo alcance.",
     img: "./assets/lanterna.png",
@@ -454,6 +457,7 @@ const PRODUCTS = {
 
   p5: {
     badge: "Linha OLLED",
+    video: "./assets/V[ideo cadeado 20mm.mp4",
     title: "Cadeado De 20mm",
     desc: "Segurança e resistência: construção robusta com padrão de qualidade OLLED.",
     img: "./assets/Cadeados.png",
@@ -474,6 +478,7 @@ const PRODUCTS = {
 
   p6: {
     badge: "Linha OLLED",
+    video: "./assets/Cadeado 0mm.mp4",
     title: "Cadeado De 30mm",
     desc: "Mais proteção no uso diário, com design compacto e durabilidade superior.",
     img: "./assets/cadeado.png",
@@ -494,6 +499,7 @@ const PRODUCTS = {
 
   p7: {
     badge: "Linha OLLED",
+    video: "./assets/video lanterna.mp4",
     title: "Refletor 200w Testeira",
     desc: "Design moderno + eficiência: feito para ambientes comerciais e profissionais.",
     // ⚠️ Se você renomeou a imagem para sem espaços (recomendado), atualize aqui também:
@@ -516,6 +522,7 @@ const PRODUCTS = {
 
   p8: {
     badge: "Linha OLLED",
+    video: "./assets/video lanterna.mp4",
     title: "Massageador Tubarão Relaxante",
     desc: "Relaxamento poderoso com design moderno — alívio muscular rápido para seu dia a dia.",
     img: "./assets/Massageador.png",
@@ -536,6 +543,7 @@ const PRODUCTS = {
 
   p9: {
     badge: "Linha OLLED",
+    video: "./assets/video lanterna.mp4",
     title: "Máquina de Cortar Cabelo Dragão",
     desc: "Potência, precisão e estilo em um só equipamento — ideal para cortes profissionais ou uso em casa.",
     img: "./assets/Dragão.png",
@@ -556,6 +564,7 @@ const PRODUCTS = {
 
   p10: {
     badge: "Linha OLLED",
+    video: "./assets/video lanterna.mp4",
     title: "Interruptor com Controle",
     desc: "Controle sua iluminação à distância com praticidade e segurança — tecnologia moderna para deixar sua casa mais inteligente.",
     img: "./assets/Interruptor.png",
