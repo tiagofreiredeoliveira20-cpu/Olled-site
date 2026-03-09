@@ -543,7 +543,7 @@ const PRODUCTS = {
 
   p9: {
     badge: "Saúde e Bem Estar",
-    video: "./assets/video lanterna.mp4",
+    video: "./assets/maquina dragão.mp4",
     title: "Máquina de Cortar Cabelo Dragão",
     desc: "Potência, precisão e estilo em um só equipamento — ideal para cortes profissionais ou uso em casa.",
     img: "./assets/Dragão.png",
